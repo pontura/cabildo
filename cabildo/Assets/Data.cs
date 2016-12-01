@@ -12,6 +12,7 @@ public class Data : MonoBehaviour
     public string lastScene;
     public string newScene;
     private float time_ViewingMap = 7.5f;
+    public Texts texts;
 
     public static Data Instance
     {
@@ -50,7 +51,7 @@ public class Data : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-
+        texts = GetComponent<Texts>();
         DontDestroyOnLoad(this);
     }
 }

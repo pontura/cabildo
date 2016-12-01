@@ -1,0 +1,14 @@
+[
+	{
+		id: "casaCheta",
+		text: "xxx La casa de bla bla bla..."
+	},
+	{
+		id: "iglesia",
+		text: "Este es el texto para la iglesia"
+	},
+	{
+		id: "campo",
+		text: "El campo bla bla"
+	}
+]
