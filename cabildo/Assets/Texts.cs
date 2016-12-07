@@ -26,11 +26,9 @@ public class Texts : MonoBehaviour
     IEnumerator Example()
     {
         string filePath = pathPreFix + "texts.json";
-        print(filePath);
         WWW www = new WWW(filePath);
         yield return www;
         result = www.text;
-        print(result);
         LoadDataromServer(result);
     }
     public void LoadDataromServer(string json_data)
