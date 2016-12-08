@@ -29,6 +29,7 @@ public class InputManager : MonoBehaviour {
             else
             {
                 print(hit.collider.name);
+                Events.OnGloboDialogo(Input.mousePosition, "soy pontura");
             }
         }
     }
