@@ -7,8 +7,11 @@ public class InputManager : MonoBehaviour {
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
+                return;
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10;
 
@@ -18,6 +21,7 @@ public class InputManager : MonoBehaviour {
     }
     void CheckColliderIn(Vector3 pos)
     {
+
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
         if (hit)
         {
@@ -29,8 +33,11 @@ public class InputManager : MonoBehaviour {
             else
             {
                 print(hit.collider.name);
-                Events.OnGloboDialogo(Input.mousePosition, "soy pontura");
+                Events.OnGloboDialogo(Input.mousePosition, hit.collider.name);
             }
+        } else
+        {
+            Events.OnClickOutside();
         }
     }
 }

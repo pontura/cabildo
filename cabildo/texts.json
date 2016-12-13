@@ -10,5 +10,14 @@
 	{
 		id: "campo",
 		text: "El campo bla bla"
+	},
+	{
+		id: "negrito",
+		multiple-choice: 
+		{ 
+			title: "Quiero comprar:",
+			options: ["Leche", "Agua"],
+			onClick: ["negrito-leche", "negrito-agua"]
+		}		
 	}
 ]
