@@ -17,7 +17,6 @@ public class PopupManagar : MonoBehaviour {
         Events.OnGloboPopup -= OnGloboPopup;
     }    
     void OnGloboPopup(string id) {
-        print("OnGloboPopup " + id);
         ResetAll();        
         switch (id)
         {

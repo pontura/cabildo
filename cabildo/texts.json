@@ -28,6 +28,21 @@
 		id: "casaSecundaria",
 		title: "Casa Secundaria",
 		text: "Texto sobre Casa Secundaria Casa Secundaria Casa Secundaria Casa Secundaria Casa SecundariaCasa Secundaria sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "cocina",
+		title: "Cocina",
+		text: "Algún texto sobre la cocina"
+	},	
+	{
+		id: "cuarto",
+		title: "cuarto",
+		text: "Algún texto sobre el cuarto acá..."
+	},	
+	{
+		id: "banio",
+		title: "Baño",
+		text: "Algún texto sobre el baño..."
 	},	
 	{
 		id: "negrito",

@@ -8,7 +8,7 @@ public static class Events
 
     public static System.Action<Vector3, string> OnGloboDialogo = delegate { };
     public static System.Action<string> OnGloboPopup = delegate { };
-        
+    public static System.Action OnHeaderOff = delegate { };
     public static System.Action OnClickOutside = delegate { };
 
 

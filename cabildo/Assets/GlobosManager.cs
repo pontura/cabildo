@@ -23,11 +23,13 @@ public class GlobosManager : MonoBehaviour {
     }
     void OnGloboPopup(string id)
     {
+        CheckForHeaderText(id);
         globoPopup.gameObject.SetActive(true);
     }
     void OnClickOutside()
     {
         ResetGlobos();
+        Events.OnHeaderOff();
     }
     void ResetGlobos()
     {
@@ -41,28 +43,34 @@ public class GlobosManager : MonoBehaviour {
     void OnGloboDialogo(Vector3 pos, string id)
     {
         ResetGlobos();
-        texts.GetSimpleContentData(id);
-
+        CheckForHeaderText(id);
+        CheckMultipleChoice(id, pos);
+        CheckSpecialGlobo(id);
+    }
+    void CheckForHeaderText(string id)
+    {
         Texts.SimpleContent simpleContent = Data.Instance.texts.GetSimpleContentData(id);
-        if(simpleContent != null)
+        if (simpleContent != null)
             globoHeader.Init(simpleContent);
-
+    }
+    void CheckMultipleChoice(string id, Vector2 pos)
+    {
         Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(id);
         if (mc != null)
         {
             globoMultipleChoice.transform.position = pos;
             globoMultipleChoice.Init(mc);
         }
-
+    }
+    void CheckSpecialGlobo(string id)
+    {
         switch (id)
         {
             case "casaCheta":
                 globoCasa.transform.position = globoCasa_pos;
                 break;
         }
-
-        print("OnGloboDialogo pos: " + pos + "    id: " + id + " type: " + id);
-
     }
+
 
 }

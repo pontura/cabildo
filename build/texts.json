@@ -1,14 +1,56 @@
 [
 	{
 		id: "casaCheta",
-		text: "xxx La casa de bla bla bla..."
+		title: "Casa Pudiente",
+		text: "La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla..."
 	},
 	{
 		id: "iglesia",
+		title: "Iglesia",
 		text: "Este es el texto para la iglesia"
 	},
 	{
 		id: "campo",
+		title: "El Campo",
 		text: "El campo bla bla"
+	},
+	{
+		id: "rancho",
+		title: "Rancho",
+		text: "Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "pulperia",
+		title: "Pulperia",
+		text: "Texto sobre el PulperiaPulperia Pulperia Pulperia Pulperia Pulperia Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "casaSecundaria",
+		title: "Casa Secundaria",
+		text: "Texto sobre Casa Secundaria Casa Secundaria Casa Secundaria Casa Secundaria Casa SecundariaCasa Secundaria sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "cocina",
+		title: "Cocina",
+		text: "Algún texto sobre la cocina"
+	},	
+	{
+		id: "cuarto",
+		title: "cuarto",
+		text: "Algún texto sobre el cuarto acá..."
+	},	
+	{
+		id: "banio",
+		title: "Baño",
+		text: "Algún texto sobre el baño..."
+	},	
+	{
+		id: "negrito",
+		multiple-choice: 
+		{ 
+			title: "Quiero comprar:",
+			options: ["Leche", "Agua"],
+			onClick: ["negrito-leche", "negrito-agua"]
+		}		
 	}
 ]
