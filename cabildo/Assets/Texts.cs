@@ -26,6 +26,7 @@ public class Texts : MonoBehaviour
     public class SimpleContent
     {
         public string id;
+        public string title;
         public string text;
     }
     [Serializable]
@@ -67,6 +68,7 @@ public class Texts : MonoBehaviour
     {
         SimpleContent dataContent = new SimpleContent();
         dataContent.id = content["id"];
+        dataContent.title = content["title"];
         dataContent.text = content["text"];
         simpleContents.Add(dataContent);
     }
@@ -95,16 +97,6 @@ public class Texts : MonoBehaviour
                 return content.text;
         Debug.Log("NO EXISTE UN TEXTO PATA : " + textID);
         return null;
-    }
-    public types GetTypeOfContent(string id)
-    {
-        if (GetSimpleContentData(id) != null)
-            return types.SIMPLE;
-        else
-        if(GetMultipleChoiceData(id) != null)
-            return types.MULTIPLECHOICE;
-        else
-        return types.NONE;
     }
     public SimpleContent GetSimpleContentData(string id)
     {

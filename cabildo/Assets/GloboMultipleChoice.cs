@@ -10,11 +10,10 @@ public class GloboMultipleChoice : MonoBehaviour
     public Transform container;
     List<string> onClick;
 
-    public void Init(string text)
+    public void Init(Texts.MultipleChoice mc)
     {
-        Utils.RemoveAllChildsIn(container);       
-        
-        Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(text);
+        Utils.RemoveAllChildsIn(container);  
+       
         field.text = mc.title;
         this.onClick = mc.onClick;
 

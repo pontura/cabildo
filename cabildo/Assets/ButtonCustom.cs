@@ -8,6 +8,6 @@ public class ButtonCustom : Button {
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        print("ok");
+        print("ButtonCustom pressed");
     }
 }

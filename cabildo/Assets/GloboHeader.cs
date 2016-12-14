@@ -5,31 +5,12 @@ using System.Collections.Generic;
 
 public class GloboHeader : MonoBehaviour
 {
-    public Text field;
-    public SimpleButton simpleButton;
-    public Transform container;
-    List<string> onClick;
+    public Text titleField;
+    public Text field;    
 
-    public void Init(string text)
+    public void Init(Texts.SimpleContent content)
     {
-        Utils.RemoveAllChildsIn(container);
-
-        Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(text);
-        field.text = mc.title;
-        this.onClick = mc.onClick;
-
-        int id = 0;
-        foreach (string option in mc.options)
-        {
-            SimpleButton sButton = Instantiate(simpleButton);
-            sButton.GetComponent<Button>().onClick.AddListener(() => { TaskOnClick(sButton); });
-            sButton.Init(id, option);
-            sButton.transform.SetParent(container);
-            id++;
-        }
-    }
-    public void TaskOnClick(SimpleButton sb)
-    {
-        Events.OnGloboDialogo(transform.position, onClick[sb.id]);
+        titleField.text = content.title;
+        field.text = content.text;
     }
 }

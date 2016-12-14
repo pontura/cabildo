@@ -7,6 +7,8 @@ public class GlobosManager : MonoBehaviour {
     public GloboMultipleChoice globoMultipleChoice;
     public GloboFoto globoFoto;
     public GloboCasa globoCasa;
+    public GloboPopup globoPopup;
+    public GloboHeader globoHeader;
 
     private Texts texts;
     private Vector2 globoCasa_pos;
@@ -15,8 +17,13 @@ public class GlobosManager : MonoBehaviour {
         globoCasa_pos = globoCasa.transform.position;
         texts = Data.Instance.texts;
         Events.OnGloboDialogo += OnGloboDialogo;
+        Events.OnGloboPopup += OnGloboPopup;
         Events.OnClickOutside += OnClickOutside;
         ResetGlobos();
+    }
+    void OnGloboPopup(string id)
+    {
+        globoPopup.gameObject.SetActive(true);
     }
     void OnClickOutside()
     {
@@ -29,29 +36,32 @@ public class GlobosManager : MonoBehaviour {
         globoMultipleChoice.transform.position = pos;
         globoFoto.transform.position = pos;
         globoCasa.transform.position = pos;
+        globoPopup.gameObject.SetActive(false);
     }
-    void OnGloboDialogo(Vector3 pos, string text)
+    void OnGloboDialogo(Vector3 pos, string id)
     {
         ResetGlobos();
-        Texts.types type = texts.GetTypeOfContent(text);
-        switch(text)
+        texts.GetSimpleContentData(id);
+
+        Texts.SimpleContent simpleContent = Data.Instance.texts.GetSimpleContentData(id);
+        if(simpleContent != null)
+            globoHeader.Init(simpleContent);
+
+        Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(id);
+        if (mc != null)
+        {
+            globoMultipleChoice.transform.position = pos;
+            globoMultipleChoice.Init(mc);
+        }
+
+        switch (id)
         {
             case "casaCheta":
                 globoCasa.transform.position = globoCasa_pos;
                 break;
         }
-        switch (type)
-        {
-            //case Texts.types.SIMPLE:
-            //    globoSimple.transform.position = pos;
-            //    globoSimple.Init(text);
-            //    break;
-            case Texts.types.MULTIPLECHOICE:
-                globoMultipleChoice.transform.position = pos;
-                globoMultipleChoice.Init(text);
-                break;
-        }
-        print("OnGloboDialogo pos: " + pos + "    text: " + text + " type: " + type);
+
+        print("OnGloboDialogo pos: " + pos + "    id: " + id + " type: " + id);
 
     }
 

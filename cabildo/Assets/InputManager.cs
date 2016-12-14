@@ -19,6 +19,17 @@ public class InputManager : MonoBehaviour {
             CheckColliderIn(screenPos);
         }
     }
+    public void PopupClicked()
+    {
+        print("PopupClicked");
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 10;
+
+        Vector3 screenPos = main.ScreenToWorldPoint(mousePos);
+        screenPos.x -= 20;
+        CheckColliderIn(screenPos);
+       // CheckColliderIn(screenPos);
+    }
     void CheckColliderIn(Vector3 pos)
     {
 

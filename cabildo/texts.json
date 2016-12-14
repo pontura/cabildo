@@ -1,16 +1,34 @@
 [
 	{
 		id: "casaCheta",
-		text: "La casa de bla bla bla..."
+		title: "Casa Pudiente",
+		text: "La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla..."
 	},
 	{
 		id: "iglesia",
+		title: "Iglesia",
 		text: "Este es el texto para la iglesia"
 	},
 	{
 		id: "campo",
+		title: "El Campo",
 		text: "El campo bla bla"
 	},
+	{
+		id: "rancho",
+		title: "Rancho",
+		text: "Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "pulperia",
+		title: "Pulperia",
+		text: "Texto sobre el PulperiaPulperia Pulperia Pulperia Pulperia Pulperia Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},
+	{
+		id: "casaSecundaria",
+		title: "Casa Secundaria",
+		text: "Texto sobre Casa Secundaria Casa Secundaria Casa Secundaria Casa Secundaria Casa SecundariaCasa Secundaria sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+	},	
 	{
 		id: "negrito",
 		multiple-choice: 
