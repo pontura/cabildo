@@ -16,7 +16,7 @@ public class GlobosManager : MonoBehaviour {
     void Start() {
         globoCasa_pos = globoCasa.transform.position;
         texts = Data.Instance.texts;
-        Events.OnGloboDialogo += OnGloboDialogo;
+        Events.OnClick += OnClick;
         Events.OnGloboPopup += OnGloboPopup;
         Events.OnClickOutside += OnClickOutside;
         ResetGlobos();
@@ -40,7 +40,7 @@ public class GlobosManager : MonoBehaviour {
         globoCasa.transform.position = pos;
         globoPopup.gameObject.SetActive(false);
     }
-    void OnGloboDialogo(Vector3 pos, string id)
+    void OnClick(Vector3 pos, string id)
     {
         ResetGlobos();
         CheckForHeaderText(id);

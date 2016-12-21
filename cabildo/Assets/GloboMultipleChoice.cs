@@ -29,6 +29,6 @@ public class GloboMultipleChoice : MonoBehaviour
     }
     public void TaskOnClick(SimpleButton sb)
     {
-        Events.OnGloboDialogo(transform.position,  onClick[sb.id]);
+        Events.OnClick(transform.position,  onClick[sb.id]);
     }
 }

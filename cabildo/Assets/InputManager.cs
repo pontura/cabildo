@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
             else
             {
                 print(hit.collider.name);
-                Events.OnGloboDialogo(Input.mousePosition, hit.collider.name);
+                Events.OnClick(Input.mousePosition, hit.collider.name);
             }
         } else
         {
