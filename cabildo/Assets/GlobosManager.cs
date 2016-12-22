@@ -9,12 +9,12 @@ public class GlobosManager : MonoBehaviour {
     public GloboCasa globoCasa;
     public GloboPopup globoPopup;
     public GloboHeader globoHeader;
+    public UICocina cocina;
 
     private Texts texts;
-    private Vector2 globoCasa_pos;
 
     void Start() {
-        globoCasa_pos = globoCasa.transform.position;
+        cocina.gameObject.SetActive(false);
         texts = Data.Instance.texts;
         Events.OnClick += OnClick;
         Events.OnGloboPopup += OnGloboPopup;
@@ -24,21 +24,26 @@ public class GlobosManager : MonoBehaviour {
     void OnGloboPopup(string id)
     {
         CheckForHeaderText(id);
+        switch (id)
+        {
+           // case "banio": banio.SetActive(true); break;
+            case "cocina": cocina.gameObject.SetActive(true); break;
+           // case "cuarto": cuarto.SetActive(true); break;
+        }
         globoPopup.gameObject.SetActive(true);
     }
     void OnClickOutside()
     {
         ResetGlobos();
         Events.OnHeaderOff();
+        globoPopup.gameObject.SetActive(false);
     }
     void ResetGlobos()
     {
-        Vector2 pos = new Vector2(-1000, 0);
-        globoSimple.transform.position = pos;
-        globoMultipleChoice.transform.position = pos;
-        globoFoto.transform.position = pos;
-        globoCasa.transform.position = pos;
-        globoPopup.gameObject.SetActive(false);
+        globoSimple.gameObject.SetActive(false);
+        globoMultipleChoice.gameObject.SetActive(false);
+        globoFoto.gameObject.SetActive(false);
+        globoCasa.gameObject.SetActive(false);
     }
     void OnClick(Vector3 pos, string id)
     {
@@ -67,7 +72,7 @@ public class GlobosManager : MonoBehaviour {
         switch (id)
         {
             case "casaCheta":
-                globoCasa.transform.position = globoCasa_pos;
+                globoCasa.gameObject.SetActive(true);
                 break;
         }
     }

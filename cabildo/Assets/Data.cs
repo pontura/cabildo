@@ -51,6 +51,7 @@ public class Data : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
+
         texts = GetComponent<Texts>();
         DontDestroyOnLoad(this);
     }

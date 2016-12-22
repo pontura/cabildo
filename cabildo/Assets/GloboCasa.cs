@@ -9,7 +9,6 @@ public class GloboCasa : MonoBehaviour {
     public void Clicked(string id)
     {
         Events.OnGloboPopup(id);
-        Vector2 pos = new Vector2(-1000, 0);
-        transform.position = pos;
+        gameObject.SetActive(false);
     }
 }
