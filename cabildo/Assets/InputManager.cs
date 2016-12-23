@@ -36,7 +36,6 @@ public class InputManager : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
         if (hit)
         {
-            print("**********  " + hit.transform.gameObject.name);
             Events.OnClick(pos, hit.transform.gameObject.name);
         } else
         {

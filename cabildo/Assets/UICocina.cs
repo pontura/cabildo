@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 
 public class UICocina : MonoBehaviour {
-
+    
     public GameObject globoReceta;
     public GameObject globoVerReceta;
 
@@ -30,10 +30,18 @@ public class UICocina : MonoBehaviour {
     public RecetaLine[] receta_locro;
     public RecetaLine[] receta_puchero;
 
+    void Next()
+    {
+        ResetProgress();
+        Reset();
+        if (receta == recetas.CARBONADA) receta = recetas.LOCRO;
+        else if (receta == recetas.LOCRO) receta = recetas.PUCHERO;
+        else if (receta == recetas.PUCHERO) receta = recetas.CARBONADA;
+    }
     void OnEnable()
     {
         Reset();
-        receta = recetas.PUCHERO;
+        receta = recetas.CARBONADA;
         OnVerReceta(receta);
 
         Events.OnVerReceta += OnVerReceta;
@@ -74,6 +82,18 @@ public class UICocina : MonoBehaviour {
                 break;
         }
     }
+    RecetaLine[] GetActualRecetaArray()
+    {
+        switch (receta)
+        {
+            case recetas.PUCHERO:
+                return receta_puchero;
+            case recetas.LOCRO:
+                return receta_locro;
+            default:
+                return receta_carbonada;
+        }
+    }
     void OnVerReceta(recetas receta)
     {
         this.receta = receta;
@@ -95,16 +115,17 @@ public class UICocina : MonoBehaviour {
                 if (GetIngredienteInReceta(receta_puchero, ingrediente) != null && GetIngredienteInReceta(receta_puchero, ingrediente).ready) return true;
                 break;
             case recetas.LOCRO:
-                if (GetIngredienteInReceta(receta_locro, ingrediente).ready) return true;
+                if (GetIngredienteInReceta(receta_locro, ingrediente) != null && GetIngredienteInReceta(receta_locro, ingrediente).ready) return true;
                 break;
             case recetas.CARBONADA:
-                if (GetIngredienteInReceta(receta_carbonada, ingrediente).ready) return true;
+                if (GetIngredienteInReceta(receta_carbonada, ingrediente) != null && GetIngredienteInReceta(receta_carbonada, ingrediente).ready) return true;
                 break;
         }
         return false;
     }
     public bool IsInTheReceta(Cocina.minigames ingrediente)
     {
+        if (GetIngredienteInReceta(GetActualRecetaArray(), ingrediente) == null) return false;
         return true;
     }
     void Reset()
@@ -113,13 +134,47 @@ public class UICocina : MonoBehaviour {
         carbonada.SetActive(false);
         puchero.SetActive(false);
     }
+    void ResetProgress()
+    {
+        foreach (RecetaLine line in receta_locro)
+        {
+            line.ready = false;
+            line.readyImage.gameObject.SetActive(false);
+        }
+    }
     public void StartRecetaClicked()
     {
-        globoVerReceta.gameObject.SetActive(true);
-        globoReceta.SetActive(false);
+        VerRecetaButtonOn();
     }
     public void VerRecetaClicked()
     {
         OnVerReceta(receta);
+    }
+    public void VerRecetaButtonOn()
+    {
+        Events.ResetGlobos();
+        globoVerReceta.gameObject.SetActive(true);
+        globoReceta.SetActive(false);
+    }
+    public void VerRecetaButtonOff()
+    {
+        globoVerReceta.gameObject.SetActive(false);
+        globoReceta.SetActive(false);
+    }
+    public void IngredienteReady()
+    {
+        globoVerReceta.gameObject.SetActive(false);
+        globoReceta.SetActive(true);
+    }
+    public bool CheckRecetaReady()
+    {
+        foreach (RecetaLine line in GetActualRecetaArray())
+            if (!line.ready)
+            {
+                print(line.ingrediente + " FALSE");
+                return false;
+            }
+        Next();
+        return true;
     }
 }

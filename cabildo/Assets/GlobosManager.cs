@@ -4,6 +4,7 @@ using System.Collections;
 public class GlobosManager : MonoBehaviour {
 
     public GloboInfo globoSimple;
+    public GloboInfo globoSimpleAbajo;
     public GloboMultipleChoice globoMultipleChoice;
     public GloboFoto globoFoto;
     public GloboCasa globoCasa;
@@ -18,8 +19,37 @@ public class GlobosManager : MonoBehaviour {
         texts = Data.Instance.texts;
         Events.OnClick += OnClick;
         Events.OnGloboPopup += OnGloboPopup;
+        Events.OnGloboMultipleChoice += OnGloboMultipleChoice;
         Events.OnClickOutside += OnClickOutside;
+        Events.OnGloboSimple += OnGloboSimple;
+        Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
+        Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
+        Events.ResetGlobos += ResetGlobos;
         ResetGlobos();
+    }
+    void OnDestroy()
+    {
+        Events.OnClick -= OnClick;
+        Events.OnGloboPopup -= OnGloboPopup;
+        Events.OnGloboMultipleChoice -= OnGloboMultipleChoice;
+        Events.OnClickOutside -= OnClickOutside;
+        Events.OnGloboSimple -= OnGloboSimple;
+        Events.OnGloboSimpleAbajo -= OnGloboSimpleAbajo;
+        Events.ResetGlobos -= ResetGlobos;
+    }
+    void OnGloboSimple(Vector2 pos, string text)
+    {
+        ResetGlobos();
+        globoSimple.gameObject.SetActive(true);
+        globoSimple.transform.localPosition = pos;
+        globoSimple.Init(Data.Instance.texts.GetContent(text));
+    }
+    void OnGloboSimpleAbajo(Vector2 pos, string text)
+    {
+        ResetGlobos();
+        globoSimpleAbajo.gameObject.SetActive(true);
+        globoSimpleAbajo.transform.localPosition = pos;
+        globoSimpleAbajo.Init(Data.Instance.texts.GetContent(text));
     }
     void OnGloboPopup(string id)
     {
@@ -40,6 +70,9 @@ public class GlobosManager : MonoBehaviour {
     }
     void ResetGlobos()
     {
+        cocina.globoReceta.gameObject.SetActive(false);
+        cocina.globoVerReceta.gameObject.SetActive(false);
+        globoSimpleAbajo.gameObject.SetActive(false);
         globoSimple.gameObject.SetActive(false);
         globoMultipleChoice.gameObject.SetActive(false);
         globoFoto.gameObject.SetActive(false);
@@ -49,7 +82,7 @@ public class GlobosManager : MonoBehaviour {
     {
         ResetGlobos();
         CheckForHeaderText(id);
-        CheckMultipleChoice(id, pos);
+        OnGloboMultipleChoice(pos, id);
         CheckSpecialGlobo(id);
     }
     void CheckForHeaderText(string id)
@@ -58,12 +91,13 @@ public class GlobosManager : MonoBehaviour {
         if (simpleContent != null)
             globoHeader.Init(simpleContent);
     }
-    void CheckMultipleChoice(string id, Vector2 pos)
+    void OnGloboMultipleChoice(Vector2 pos, string id)
     {
-        Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(id);
+        Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(id);        
         if (mc != null)
         {
-            globoMultipleChoice.transform.position = pos;
+            globoMultipleChoice.gameObject.SetActive(true);
+            globoMultipleChoice.transform.localPosition = pos;
             globoMultipleChoice.Init(mc);
         }
     }

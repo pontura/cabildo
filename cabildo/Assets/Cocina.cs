@@ -3,10 +3,17 @@ using System.Collections;
 
 public class Cocina : MonoBehaviour {
 
+    public CocinaCortarAnim zapallo;
+    public CocinaCortarAnim papas;
+    public CocinaCortarAnim cebolla;
+    public CocinaCortarAnim aceite;
+    public CocinaCortarAnim sal;
     public CocinaCortarAnim zanahoria;
     public CocinaCortarAnim arroz;
+    public CocinaCortarAnim porotos;
 
     public UICocina uiCocina;
+    public Vector2 mulataPos;
 
     public minigames minigame;
     public enum minigames
@@ -19,34 +26,113 @@ public class Cocina : MonoBehaviour {
         SAL,
         ZANAHORIA,
         ARROZ,
-        POROTOS
+        POROTOS,
+        READY,
+        COMPLETE
     }
 
 	void OnEnable () {
+        uiCocina.VerRecetaButtonOn();
+        minigame = minigames.NONE;
         Events.OnClick += OnClick;
         Events.OnMinigameReady += OnMinigameReady;
+        ResetAllGames();        
     }
     void OnDisable()
     {
         Events.OnClick -= OnClick;
         Events.OnMinigameReady -= OnMinigameReady;
     }
-    void OnMinigameReady()
+    void ResetAllGames()
     {
-        print("OnMinigameReady " + minigame);
-        Events.OnMinigameCocinaReady(minigame);
+        zapallo.gameObject.SetActive(false);
+        papas.gameObject.SetActive(false);
+        cebolla.gameObject.SetActive(false);
+        aceite.gameObject.SetActive(false);
+        sal.gameObject.SetActive(false);
+        zanahoria.gameObject.SetActive(false);
+        arroz.gameObject.SetActive(false);
+        porotos.gameObject.SetActive(false);
     }
     void OnClick(Vector3 pos, string clicked)
     {
-        if (minigame == minigames.NONE)
+        if (minigame == minigames.COMPLETE)
         {
             switch (clicked)
             {
+                case "mulata-otra":
+                    minigame = minigames.NONE;
+                    Events.ResetGlobos();
+                    uiCocina.VerRecetaButtonOn();
+                    break;
+                case "mulata-done":
+                    Events.ResetGlobos();
+                    gameObject.SetActive(false);
+                    break;
+            }
+            return;
+        }
+        if (minigame == minigames.READY) return;
+
+        if (minigame == minigames.NONE)
+        {
+            print("cocina: " + clicked);
+            switch (clicked)
+            {
+                case "aceite":
+                    if (CheckIfAvailableSelectIngrediente(minigames.ACEITE))
+                    {
+                        minigame = minigames.ACEITE;
+                        InitGame(aceite.gameObject);
+                    }
+                    break;
+                case "papas":
+                    if (CheckIfAvailableSelectIngrediente(minigames.PAPAS))
+                    {
+                        minigame = minigames.PAPAS;
+                        InitGame(papas.gameObject);
+                    }
+                    break;
+                case "arroz":
+                    if (CheckIfAvailableSelectIngrediente(minigames.ARROZ))
+                    {
+                        minigame = minigames.ARROZ;
+                        InitGame(arroz.gameObject);
+                    }
+                    break;
                 case "zanahoria":
                     if (CheckIfAvailableSelectIngrediente(minigames.ZANAHORIA))
                     {
                         minigame = minigames.ZANAHORIA;
-                        zanahoria.gameObject.SetActive(true);
+                        InitGame(zanahoria.gameObject);
+                    }
+                    break;
+                case "zapallo":
+                    if (CheckIfAvailableSelectIngrediente(minigames.ZAPALLO))
+                    {
+                        minigame = minigames.ZAPALLO;
+                        InitGame(zapallo.gameObject);
+                    }
+                    break;
+                case "porotos":
+                    if (CheckIfAvailableSelectIngrediente(minigames.POROTOS))
+                    {
+                        minigame = minigames.POROTOS;
+                        InitGame(porotos.gameObject);
+                    }
+                    break;
+                case "cebollas":
+                    if (CheckIfAvailableSelectIngrediente(minigames.CEBOLLA))
+                    {
+                        minigame = minigames.CEBOLLA;
+                        InitGame(cebolla.gameObject);
+                    }
+                    break;
+                case "sal":
+                    if (CheckIfAvailableSelectIngrediente(minigames.SAL))
+                    {
+                        minigame = minigames.SAL;
+                        InitGame(sal.gameObject);
                     }
                     break;
             }
@@ -55,27 +141,83 @@ public class Cocina : MonoBehaviour {
         {
             switch (clicked)
             {
-                case "haceArroz":
-                    arroz.PlayAnim("haceArroz");
+                case "hace_aceite":
+                    aceite.PlayAnim("tirarAceite", 0f, 3);
                     break;
-                case "corteZanahoria":
-                    zanahoria.PlayAnim("corteZanahoria");
+                case "hace_papa":
+                    papas.PlayAnim("cortePapa", 0.5f, 2);
+                    break;
+                case "hace_arroz":
+                    arroz.PlayAnim("tirarArroz", 0.6f);
+                    break;
+                case "hace_zanahoria":
+                    zanahoria.PlayAnim("corteZanahoria", 0.8f);
+                    break;
+                case "hace_zapallo":
+                    zapallo.PlayAnim("corteZapallo", 0.4f);
+                    break;
+                case "hace_porotos":
+                    porotos.PlayAnim("tirarPorotos", 0.4f);
+                    break;
+                case "hace_cebolla":
+                    cebolla.PlayAnim("cortarCebolla", 0.7f);
+                    break;
+                case "hace_sal":
+                    sal.PlayAnim("tirarSal", 0.4f, 2);
                     break;
             }
         }
     }
-    bool CheckIfAvailableSelectIngrediente(minigames ingrediente)
-    {       
+    void InitGame(GameObject go)
+    {
+        go.gameObject.SetActive(true);
+        uiCocina.VerRecetaButtonOff();
+    }
+    void OnMinigameReady()
+    {    
+        Events.OnMinigameCocinaReady(minigame);        
+        ResetAllGames();
+        
+        if (uiCocina.CheckRecetaReady())
+        {
+            Vector2 pos = mulataPos;
+            pos.y += 180;
+            Events.OnGloboMultipleChoice(pos, "mulata_fin");
+            minigame = minigames.COMPLETE;
+        }
+        else
+        {
+            OpenGloboSimpleAbajo("mulata_felicita_por_ingrediente");
+            minigame = minigames.READY;
+        }
+    }
+    bool CheckIfAvailableSelectIngrediente(minigames minigame)
+    {
+        print("CheckIfAvailableSelectIngrediente" + minigame);
+         
         if (uiCocina.IsReady(minigame))
         {
-            print("READY");
+            OpenGloboSimpleAbajo("mulata_tiene_ingrediente");
             return false;
         }
         else if (!uiCocina.IsInTheReceta(minigame))
         {
-            print("No esta en la receta");
+            OpenGloboSimpleAbajo("mulata_no_necesita_ingrediente");
             return false;
         }
         return true;
+    }    
+    void OpenGloboSimpleAbajo(string text)
+    {
+        Events.OnGloboSimpleAbajo(mulataPos, text);
+        uiCocina.VerRecetaButtonOff();
+        Invoke("VerRecetaButtonOn", 2);
     }
+    void VerRecetaButtonOn()
+    {
+        uiCocina.VerRecetaButtonOn();
+        //uiCocina.IngredienteReady();
+        minigame = minigames.NONE;
+    }
+    
 }

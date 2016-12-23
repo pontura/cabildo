@@ -9,7 +9,13 @@ public static class Events
     public static System.Action<Cocina.minigames> OnMinigameCocinaReady = delegate { };
 
     public static System.Action<Vector3, string> OnClick = delegate { };
+
+    public static System.Action ResetGlobos = delegate { };
     public static System.Action<string> OnGloboPopup = delegate { };
+    public static System.Action<Vector2, string> OnGloboSimple = delegate { };
+    public static System.Action<Vector2, string> OnGloboMultipleChoice = delegate { };
+    public static System.Action<Vector2, string> OnGloboSimpleAbajo = delegate { };    
+
     public static System.Action OnHeaderOff = delegate { };
     public static System.Action OnClickOutside = delegate { };
 

@@ -16,21 +16,21 @@ public class CocinaCortarAnim : MonoBehaviour {
         anim.playbackTime = 0;
         anim.speed = 1;
     }	
-    public void PlayAnim(string animName)
+    public void PlayAnim(string animName, float ended, float timeToReady = 1)
     {
         if (ready) return;
         anim.Play(animName);
         anim.speed = 1;
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
         float playbackTime = info.normalizedTime % 1;
-        if (playbackTime > 0.8f)
-            Ready();
+        if (playbackTime > ended)
+            Ready(timeToReady);
         print(" animName : " + animName + " time : " + playbackTime);
     }
-    void Ready()
+    void Ready(float timeToReady)
     {
         ready = true;
-        Invoke("ReadyDelay", 1);
+        Invoke("ReadyDelay", timeToReady);
     }
     void ReadyDelay()
     {
