@@ -3,6 +3,12 @@ using System.Collections;
 
 public class GlobosManager : MonoBehaviour {
 
+    public sides side;
+    public enum sides
+    {
+        LEFT,
+        RIGHT
+    }
     public GloboInfo globoSimple;
     public GloboInfo globoSimpleAbajo;
     public GloboMultipleChoice globoMultipleChoice;
@@ -25,6 +31,7 @@ public class GlobosManager : MonoBehaviour {
         Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
         Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
         Events.ResetGlobos += ResetGlobos;
+        Events.ResetPopup += ResetPopup;
         ResetGlobos();
     }
     void OnDestroy()
@@ -35,7 +42,13 @@ public class GlobosManager : MonoBehaviour {
         Events.OnClickOutside -= OnClickOutside;
         Events.OnGloboSimple -= OnGloboSimple;
         Events.OnGloboSimpleAbajo -= OnGloboSimpleAbajo;
+        Events.ResetPopup -= ResetPopup;
         Events.ResetGlobos -= ResetGlobos;
+    }
+    void ResetPopup(GlobosManager.sides side)
+    {
+        if(side == sides.LEFT)
+            globoPopup.gameObject.SetActive(false);
     }
     void OnGloboSimple(Vector2 pos, string text)
     {

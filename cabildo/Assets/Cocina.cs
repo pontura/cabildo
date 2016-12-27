@@ -67,7 +67,7 @@ public class Cocina : MonoBehaviour {
                     break;
                 case "mulata-done":
                     Events.ResetGlobos();
-                    gameObject.SetActive(false);
+                    Events.ResetPopup(GlobosManager.sides.LEFT);
                     break;
             }
             return;
@@ -217,7 +217,8 @@ public class Cocina : MonoBehaviour {
     {
         uiCocina.VerRecetaButtonOn();
         //uiCocina.IngredienteReady();
-        minigame = minigames.NONE;
+        if(minigame == minigames.READY)
+            minigame = minigames.NONE;
     }
     
 }
