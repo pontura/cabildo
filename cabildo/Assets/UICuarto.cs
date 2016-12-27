@@ -6,17 +6,19 @@ public class UICuarto : MonoBehaviour {
 
     public sexs selectedSex;
 
-    public Text vestirText;
-    public Text baniarText;
+    public GameObject buttonBania;
+    public GameObject buttonViste;
+
+    public Cuarto cuarto;
+
+    public GameObject boy;
+    public GameObject girl;
 
     public GameObject hint_Girl;
     public GameObject hint_Boy;
 
     public GameObject baniaGirl;
     public GameObject baniaBoy;
-
-    public GameObject ropaBoy;
-    public GameObject ropaGirl;
 
     public enum sexs
     {
@@ -30,60 +32,139 @@ public class UICuarto : MonoBehaviour {
         VESTIR,
         BANIAR
     }
-    void Start () {
+    void OnEnable () {
         Reset();
+        ShowButtons(false);
     }
-	public void SelectBoy()
+    public void SaleBanio(int id)
     {
+        if(id == 1)
+        {
+            if (!baniaGirl.activeSelf) return;
+            girl.SetActive(true); baniaGirl.SetActive(false);
+        } else
+        {
+            if (!baniaBoy.activeSelf) return;
+            boy.SetActive(true); baniaBoy.SetActive(false);
+        }
+    }
+    public void RopaSelected(int id)
+    {
+        if (!cuarto.armarioOpened) return;
+
+        print(selectedSex + id);
+
+        switch (selectedSex)
+        {
+            case sexs.MUJER:
+                
+                break;
+            case sexs.VARON:
+                cuarto.SetArmario(sexs.VARON, true);
+                break;
+        }
+    }
+    public void SelectBoy()
+    {
+        ArmarioClicked();
+        if (selectedSex == sexs.VARON && baniaBoy.activeSelf) return; 
+
         selectedSex = sexs.VARON;
-        hint_Girl.SetActive(true);
         hint_Boy.SetActive(false);
+        UpdateUI();
     }
     public void SelectGirl()
     {
+        ArmarioClicked();
+        if (selectedSex == sexs.MUJER && baniaGirl.activeSelf) return;
+
         selectedSex = sexs.MUJER;
         hint_Girl.SetActive(false);
-        hint_Boy.SetActive(true);
+        UpdateUI();
     }
     public void Vestir()
     {
-        Reset();
         action = actions.VESTIR;
-        vestirText.text = "¡Listo!";
+
         switch (selectedSex)
         {
-            case sexs.MUJER: ropaGirl.SetActive(true); break;
-            case sexs.VARON: ropaBoy.SetActive(true); break;
+            case sexs.MUJER:
+                cuarto.SetArmario(sexs.MUJER, true);
+                break;
+            case sexs.VARON:
+                cuarto.SetArmario(sexs.VARON, true);
+                break;
         }
+        UpdateUI();
+        print("Vestir " + selectedSex);
     }
     public void Baniar()
     {
-        Reset();
         action = actions.BANIAR;
-        baniarText.text = "¡Listo!";
 
         switch(selectedSex)
         {
-            case sexs.MUJER: baniaGirl.SetActive(true); break;
-            case sexs.VARON: baniaBoy.SetActive(true); break;
+            case sexs.MUJER: girl.SetActive(false); baniaGirl.SetActive(true); break;
+            case sexs.VARON: boy.SetActive(false); baniaBoy.SetActive(true); break;
         }
-    }
-    void ResetTexts()
-    {
-        action = actions.NONE;
-        vestirText.text = "Vestir";
-        baniarText.text = "Bañar";
+        UpdateUI();
     }
     void Reset()
     {
-        ResetTexts();
+        action = actions.NONE;
         hint_Girl.SetActive(true);
         hint_Boy.SetActive(true);
 
-        ropaGirl.SetActive(false);
-        ropaBoy.SetActive(false);
+        boy.SetActive(true);
+        girl.SetActive(true);
+        
 
         baniaGirl.SetActive(false);
         baniaBoy.SetActive(false);
+    }
+    public void ArmarioClicked()
+    {
+        if (!cuarto.armarioOpened) return;
+
+        switch (selectedSex)
+        {
+            case sexs.MUJER:
+                cuarto.SetArmario(sexs.MUJER, false);
+                break;
+            case sexs.VARON:
+                cuarto.SetArmario(sexs.VARON, false);
+                break;
+        }
+    }
+    void UpdateUI()
+    {
+        switch (selectedSex)
+        {
+            case sexs.MUJER:
+                if (baniaGirl.activeSelf || cuarto.armarioOpened)
+                    ShowButtons(false);
+                else
+                    ShowButtons(true);
+                break;
+            case sexs.VARON:
+                if (baniaBoy.activeSelf || cuarto.armarioOpened)
+                    ShowButtons(false);
+                else
+                    ShowButtons(true);
+                break;
+        }
+    }
+    void ShowButtons(bool si)
+    {
+        if (!si)
+        {
+            buttonBania.SetActive(false);
+            buttonViste.SetActive(false);
+        }
+        else
+        {
+            buttonBania.SetActive(true);
+            buttonViste.SetActive(true);
+        }
     }
 }
