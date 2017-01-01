@@ -51,18 +51,7 @@ public class UICuarto : MonoBehaviour {
     public void RopaSelected(int id)
     {
         if (!cuarto.armarioOpened) return;
-
-        print(selectedSex + id);
-
-        switch (selectedSex)
-        {
-            case sexs.MUJER:
-                
-                break;
-            case sexs.VARON:
-                cuarto.SetArmario(sexs.VARON, true);
-                break;
-        }
+        cuarto.SetRopa(selectedSex, id);
     }
     public void SelectBoy()
     {

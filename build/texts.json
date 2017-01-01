@@ -2,7 +2,7 @@
 	{
 		id: "casaCheta",
 		title: "Casa Pudiente",
-		text: "La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bsssssssssssssla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla... .La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla..."
+		text: "La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla..."
 	},
 	{
 		id: "iglesia",
@@ -52,5 +52,26 @@
 			options: ["Leche", "Agua"],
 			onClick: ["negrito-leche", "negrito-agua"]
 		}		
-	}
+	},	
+	{
+		id: "mulata_tiene_ingrediente",
+		text: "Ese ingrediente ya lo usamos"
+	},
+	{
+		id: "mulata_no_necesita_ingrediente",
+		text: "La receta no lleva ese ingrediente..."
+	},
+	{
+		id: "mulata_felicita_por_ingrediente",
+		text: "¡Muy bien! Que rico va a estar esto..."
+	},
+	{
+		id: "mulata_fin",
+		multiple-choice: 
+		{ 
+			title: "Ya completamos toda la receta. ¡Gracias por la ayuda!",
+			options: ["Hacer otra", "¡Chau!"],
+			onClick: ["mulata-otra", "mulata-done"]
+		}		
+	},	
 ]

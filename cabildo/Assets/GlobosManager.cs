@@ -9,6 +9,7 @@ public class GlobosManager : MonoBehaviour {
         LEFT,
         RIGHT
     }
+    
     public GloboInfo globoSimple;
     public GloboInfo globoSimpleAbajo;
     public GloboMultipleChoice globoMultipleChoice;
@@ -17,11 +18,13 @@ public class GlobosManager : MonoBehaviour {
     public GloboPopup globoPopup;
     public GloboHeader globoHeader;
     public UICocina cocina;
+    public UICuarto cuarto;
 
     private Texts texts;
 
     void Start() {
         cocina.gameObject.SetActive(false);
+        cuarto.gameObject.SetActive(false);
         texts = Data.Instance.texts;
         Events.OnClick += OnClick;
         Events.OnGloboPopup += OnGloboPopup;
@@ -71,7 +74,7 @@ public class GlobosManager : MonoBehaviour {
         {
            // case "banio": banio.SetActive(true); break;
             case "cocina": cocina.gameObject.SetActive(true); break;
-           // case "cuarto": cuarto.SetActive(true); break;
+            case "cuarto": cuarto.gameObject.SetActive(true); break;
         }
         globoPopup.gameObject.SetActive(true);
     }
@@ -83,6 +86,7 @@ public class GlobosManager : MonoBehaviour {
     }
     void ResetGlobos()
     {
+        cuarto.gameObject.SetActive(false);
         cocina.globoReceta.gameObject.SetActive(false);
         cocina.globoVerReceta.gameObject.SetActive(false);
         globoSimpleAbajo.gameObject.SetActive(false);

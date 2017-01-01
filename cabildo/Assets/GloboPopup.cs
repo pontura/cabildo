@@ -10,5 +10,6 @@ public class GloboPopup : MonoBehaviour {
     {
         gameObject.SetActive(false);
         Events.OnHeaderOff();
+        Events.ResetGlobos();
     }
 }
