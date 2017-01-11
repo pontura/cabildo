@@ -6,9 +6,11 @@ public class Banio : MonoBehaviour {
     public BanioProgress banioProgress;
     public Animator[] flores;
     public int id;
+    public GameObject hint;
 
     void OnEnable()
     {
+        hint.SetActive(true);
         id = 0;
         foreach(Animator anim in flores)
             anim.Play("off");
@@ -30,6 +32,7 @@ public class Banio : MonoBehaviour {
         switch (clicked)
         {
             case "BanioBtn":
+                hint.SetActive(false);
                 if (id > flores.Length - 1) return;
 
                 banioProgress.PlayAnim("progreso", 0.9f);

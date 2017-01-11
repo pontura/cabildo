@@ -1,0 +1,44 @@
+[
+	{
+		aljibe:
+		{
+			mujeres:
+			[
+				[
+					{ persona:"A", frase:"¿Venís mañana a la tertulia? ¡Trajeron nuevas partituras de vals!" },
+					{ persona:"B", frase:"¿Vals? A mi me gusta más bailar minué y contradanza" }
+				],
+				[
+					{ persona:"A", frase:"¿Salimos luego de paseo?" },
+					{ persona:"B", frase:"Si, vamos a la Alameda antes de la misa. ¿Me buscás a las cinco?" } 
+				],
+				[
+					{ persona:"A", frase:"En la tertulia de los Riglos conversé mucho con un comerciante" },
+					{ persona:"B", frase:"¿El mismo que llegó de Cataluña? Estará mañana en lo de los Escalada" },
+					{ persona:"A", frase:"¡Allí lo veré! ¡No puedo más de los nervios!" } 
+				],
+				[
+					{ persona:"B", frase:"¡Qué maravilla ese aljibe!" },
+					{ persona:"A", frase:"Muy conveniente, ¡y es el único por aquí!" } 
+				]
+			],
+			
+			
+			soga:
+			[
+				[
+					{ persona:"A", frase:"¡Mi tío me regaló un trompo!" },
+					{ persona:"B", frase:"Más tarde tocaré el piano para nuestros invitados" }
+				],
+				[
+					{ persona:"A", frase:"Yo en mi casa tengo una cañas que junté para jugar a las espadas" },
+					{ persona:"B", frase:"Mi muñeca es de porcelana. Se llama Josefa." } 
+				],
+				[
+					{ persona:"A", frase:"¿Te gusta jugar a la gallina ciega? ¿Querés jugar luego?" },
+					{ persona:"B", frase:"No es de señorita chapotear en el río, ¡pero me encanta!" }
+				]
+			]
+		}
+	}
+]
