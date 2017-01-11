@@ -27,6 +27,7 @@ public class UIAljibe : MonoBehaviour {
         Events.OnGloboSimpleOff("mujeres");
         Events.ConversationKill("mujeres");
 
+        Events.OnGloboSimpleOff("negrito-tortugas");
         Events.OnGloboSimpleOff("soga");
         Events.ConversationKill("soga");
     }

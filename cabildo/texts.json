@@ -73,5 +73,9 @@
 			options: ["Hacer otra", "¡Chau!"],
 			onClick: ["mulata-otra", "mulata-done"]
 		}		
-	},	
+	},
+	{
+		id: "negrito-tortugas",
+		text: "Echamos carbones al agua para purificarla… Y tiramos tortugas para saber si está buena. Además, se comen los bichitos"
+	},
 ]

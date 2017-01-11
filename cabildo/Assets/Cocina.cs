@@ -209,7 +209,7 @@ public class Cocina : MonoBehaviour {
     }    
     void OpenGloboSimpleAbajo(string text)
     {
-        Events.OnGloboSimpleAbajo(mulataPos, text);
+        Events.OnGloboSimpleAbajo(mulataPos, text, 3);
         uiCocina.VerRecetaButtonOff();
         Invoke("VerRecetaButtonOn", 2);
     }

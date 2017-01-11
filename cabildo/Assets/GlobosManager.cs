@@ -63,12 +63,13 @@ public class GlobosManager : MonoBehaviour {
         newGloboSimple.transform.localPosition = pos;
         newGloboSimple.Init(title, text);
     }
-    void OnGloboSimpleAbajo(Vector2 pos, string text)
+    void OnGloboSimpleAbajo(Vector2 pos, string text, int resetTime = 2)
     {
-        ResetGlobos();
-        globoSimpleAbajo.gameObject.SetActive(true);
-        globoSimpleAbajo.transform.localPosition = pos;
-        globoSimpleAbajo.Init("", Data.Instance.texts.GetContent(text));
+        GloboInfo newGloboSimpleAbajo = Instantiate(globoSimpleAbajo);
+        newGloboSimpleAbajo.transform.SetParent(transform);
+        newGloboSimpleAbajo.gameObject.SetActive(true);
+        newGloboSimpleAbajo.transform.localPosition = pos;
+        newGloboSimpleAbajo.InitAndReset(text, Data.Instance.texts.GetContent(text), resetTime);
     }
     void OnGloboPopup(string id)
     {

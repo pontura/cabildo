@@ -69,6 +69,7 @@ public class Aljibe : MonoBehaviour {
         {
             aljibe.Play("open");
             aljibeOpened = true;
+            Events.OnGloboSimpleAbajo(new Vector2(-320, -360), "negrito-tortugas", 6);
         } else
         {
             splashPS.gameObject.SetActive(true);

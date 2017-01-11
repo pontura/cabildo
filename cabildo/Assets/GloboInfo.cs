@@ -25,5 +25,16 @@ public class GloboInfo : MonoBehaviour
         this.title = title;
         field.text = text;
     }
+    public void InitAndReset(string title, string text, int resetTime = 3)
+    {
+        this.title = title;
+        field.text = text;
+        Invoke("Reset", resetTime);
+    }
+    void Reset()
+    {
+        if(gameObject != null)
+            Destroy(gameObject);
+    }
 
 }
