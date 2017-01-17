@@ -52,11 +52,13 @@ public class Convesaciones : MonoBehaviour {
     private void fillArray(JSONNode content)
     {
         print(content);
-        for (int a = 0; a < content.Count; a++)
-        {
-            AddConversacion("mujeres", content[a]["aljibe"]);
-            AddConversacion("soga", content[a]["aljibe"]);
-        }
+            AddConversacion("mujeres", content[0]["aljibe"]);
+            AddConversacion("soga", content[0]["aljibe"]);
+
+            AddConversacion("cantina", content[0]["pulperia"]);
+            AddConversacion("bebedores", content[0]["pulperia"]);
+            AddConversacion("guitarrista", content[0]["pulperia"]);
+           
     }
     void AddConversacion(string characters, JSONNode content)
     {        

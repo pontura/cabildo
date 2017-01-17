@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class GloboHeader : MonoBehaviour
 {
+    public int id;
     public Text titleField;
     public Text field;
     private Animation anim;
@@ -21,9 +22,19 @@ public class GloboHeader : MonoBehaviour
     {
         anim = GetComponent<Animation>();
         Events.OnHeaderOff += OnHeaderOff;
+        Events.OnHeader2Off += OnHeader2Off;
     } 
     void OnHeaderOff()
     {
+        if (id == 1) return;
+        if (state == states.OFF) return;
+        state = states.OFF;
+        anim.clip = closeAnim;
+        anim.Play();
+    }
+    void OnHeader2Off()
+    {
+        if (id == 0) return;
         if (state == states.OFF) return;
         state = states.OFF;
         anim.clip = closeAnim;
@@ -39,6 +50,9 @@ public class GloboHeader : MonoBehaviour
     }
     public void Close()
     {
-        OnHeaderOff();
+        if (id == 1)
+            OnHeader2Off();
+        else
+            OnHeaderOff();
     }
 }

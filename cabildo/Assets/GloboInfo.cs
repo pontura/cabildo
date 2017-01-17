@@ -10,10 +10,12 @@ public class GloboInfo : MonoBehaviour
     void OnEnable()
     {
         Events.OnGloboSimpleOff += OnGloboSimpleOff;
+        Events.ConversationKill += ConversationKill;
     }
     void OnDisable()
     {
         Events.OnGloboSimpleOff -= OnGloboSimpleOff;
+        Events.ConversationKill -= ConversationKill;
     }
     void OnGloboSimpleOff(string _title)
     {
@@ -30,6 +32,10 @@ public class GloboInfo : MonoBehaviour
         this.title = title;
         field.text = text;
         Invoke("Reset", resetTime);
+    }
+    void ConversationKill(string _title)
+    {
+        if (title == _title) Reset();
     }
     void Reset()
     {

@@ -73,5 +73,21 @@
 			options: ["Hacer otra", "¡Chau!"],
 			onClick: ["mulata-otra", "mulata-done"]
 		}		
-	},	
+	},
+	{
+		id: "negrito-tortugas",
+		text: "Echamos carbones al agua para purificarla… Y tiramos tortugas para saber si está buena. Además, se comen los bichitos"
+	},
+	{
+		id: "cantina-pregunta",
+		text: "¿A quién querés que atienda?"
+	},
+	{
+		id: "cantina-esclavo",
+		text: "Ah, no, no. Está prohibido vender bebidas a esclavos. Pero bueno, dale"
+	},
+	{
+		id: "cantina-amigo",
+		text: "Ahí va una ginebra para el amigo"
+	}
 ]

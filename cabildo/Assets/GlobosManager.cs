@@ -15,11 +15,17 @@ public class GlobosManager : MonoBehaviour {
     public GloboMultipleChoice globoMultipleChoice;
     public GloboFoto globoFoto;
     public GloboCasa globoCasa;
+    public GloboPulperia globoPulperia;
     public GloboPopup globoPopup;
+    public Globo2Popup globoPopup2;
     public GloboHeader globoHeader;
+    public GloboHeader globoHeader2;
     public UICocina cocina;
     public UICuarto cuarto;
     public UIAljibe aljibe;
+
+    public UIPulperia pulperia;
+    public UIBochas bochas;
 
     private Texts texts;
 
@@ -29,14 +35,19 @@ public class GlobosManager : MonoBehaviour {
         cuarto.gameObject.SetActive(false);
         aljibe.gameObject.SetActive(false);
 
+        pulperia.gameObject.SetActive(false);
+        bochas.gameObject.SetActive(false);
+
         texts = Data.Instance.texts;
         Events.OnClick += OnClick;
         Events.OnGloboPopup += OnGloboPopup;
+        Events.OnGlobo2Popup += OnGlobo2Popup;
         Events.OnGloboMultipleChoice += OnGloboMultipleChoice;
         Events.OnClickOutside += OnClickOutside;
         Events.OnGloboSimple += OnGloboSimple;
         Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
         Events.ResetGlobos += ResetGlobos;
+        Events.ResetGlobos2 += ResetGlobos2;
         Events.ResetPopup += ResetPopup;
         ResetGlobos();
     }
@@ -44,17 +55,21 @@ public class GlobosManager : MonoBehaviour {
     {
         Events.OnClick -= OnClick;
         Events.OnGloboPopup -= OnGloboPopup;
+        Events.OnGlobo2Popup -= OnGlobo2Popup;
         Events.OnGloboMultipleChoice -= OnGloboMultipleChoice;
         Events.OnClickOutside -= OnClickOutside;
         Events.OnGloboSimple -= OnGloboSimple;
         Events.OnGloboSimpleAbajo -= OnGloboSimpleAbajo;
         Events.ResetPopup -= ResetPopup;
         Events.ResetGlobos -= ResetGlobos;
+        Events.ResetGlobos2 -= ResetGlobos2;
     }
     void ResetPopup(GlobosManager.sides side)
     {
         if(side == sides.LEFT)
             globoPopup.gameObject.SetActive(false);
+        if (side == sides.RIGHT)
+            globoPopup2.gameObject.SetActive(false);
     }
     void OnGloboSimple(string title, Vector2 pos, string text)
     {
@@ -84,11 +99,34 @@ public class GlobosManager : MonoBehaviour {
         }
         globoPopup.gameObject.SetActive(true);
     }
-    void OnClickOutside()
+    void OnGlobo2Popup(string id)
     {
-        ResetGlobos();
-        Events.OnHeaderOff();
-        globoPopup.gameObject.SetActive(false);
+        print("OnGlobo2Popup " + id);
+        CheckForHeaderText(id);
+        switch (id)
+        {
+            // case "banio": banio.SetActive(true); break;
+            case "localPulperia": pulperia.gameObject.SetActive(true); break;
+            case "bochas": bochas.gameObject.SetActive(true); break;
+            case "": bochas.gameObject.SetActive(true); break;
+        }
+        globoPopup2.gameObject.SetActive(true);
+    }
+    void OnClickOutside(Vector3 pos)
+    {
+        if(pos.x>0)
+        {
+            ResetGlobos2();
+            Events.OnHeader2Off();
+            globoPopup2.gameObject.SetActive(false);
+        }
+        else
+        {
+            ResetGlobos();
+            Events.OnHeaderOff();
+            globoPopup.gameObject.SetActive(false);
+        }
+        
     }
     void ResetGlobos()
     {
@@ -100,11 +138,27 @@ public class GlobosManager : MonoBehaviour {
         globoMultipleChoice.gameObject.SetActive(false);
         globoFoto.gameObject.SetActive(false);
         globoCasa.gameObject.SetActive(false);
+        globoPulperia.gameObject.SetActive(false);
+    }
+    void ResetGlobos2()
+    {
+        pulperia.gameObject.SetActive(false);
+        bochas.gameObject.SetActive(false);
     }
     void OnClick(Vector3 pos, string id)
     {
-        ResetGlobos();
-        CheckForHeaderText(id);
+        print(pos.x);
+        if(pos.x>0)
+        {
+            ResetGlobos2();
+            CheckForHeaderText2(id);
+        }
+        else
+        {
+            ResetGlobos();
+            CheckForHeaderText(id);
+        }
+       
         OnGloboMultipleChoice(pos, id);
         CheckSpecialGlobo(id);
     }
@@ -113,6 +167,12 @@ public class GlobosManager : MonoBehaviour {
         Texts.SimpleContent simpleContent = Data.Instance.texts.GetSimpleContentData(id);
         if (simpleContent != null)
             globoHeader.Init(simpleContent);
+    }
+    void CheckForHeaderText2(string id)
+    {
+        Texts.SimpleContent simpleContent = Data.Instance.texts.GetSimpleContentData(id);
+        if (simpleContent != null)
+            globoHeader2.Init(simpleContent);
     }
     void OnGloboMultipleChoice(Vector2 pos, string id)
     {
@@ -130,6 +190,9 @@ public class GlobosManager : MonoBehaviour {
         {
             case "casaCheta":
                 globoCasa.gameObject.SetActive(true);
+                break;
+            case "pulperia":
+                globoPulperia.gameObject.SetActive(true);
                 break;
         }
     }

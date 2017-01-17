@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour {
         {
             if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
                 return;
-            Events.OnClickOutside();
+            Events.OnClickOutside(pos);
         }
         
     }

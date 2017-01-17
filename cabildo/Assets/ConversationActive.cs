@@ -33,6 +33,8 @@ public class ConversationActive : MonoBehaviour {
     }
     void Dice()
     {
+        print(conversation.characters + "  count: " + conversation.dialogos.Count + "    ConversationActive " + dialogo_id + " frase_id: " + frase_id);
+
         string frase = conversation.dialogos[dialogo_id].temas[frase_id].frase;
 
         Vector2 pos = conversation.positions[0];

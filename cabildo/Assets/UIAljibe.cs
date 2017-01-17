@@ -16,7 +16,7 @@ public class UIAljibe : MonoBehaviour {
     {
         Reset();
         MateHabla();
-        Invoke("NinosHablan", Random.Range(1, 2));
+        NinosHablan();
     }
     void OnDisable()
     {
