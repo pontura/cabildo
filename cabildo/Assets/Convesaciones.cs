@@ -51,7 +51,7 @@ public class Convesaciones : MonoBehaviour {
     }
     private void fillArray(JSONNode content)
     {
-        print(content);
+
             AddConversacion("mujeres", content[0]["aljibe"]);
             AddConversacion("soga", content[0]["aljibe"]);
 
@@ -71,7 +71,7 @@ public class Convesaciones : MonoBehaviour {
             Dialogos dialogos = new Dialogos();
             dialogos.temas = new List<Tema>();
             JSONNode temas = (JSONNode)(options[a]);
-            print("temas.Count: " + temas.Count);
+
             for (int b = 0; b < temas.Count; b++)
             {
                 Tema tema = new Tema();
@@ -83,7 +83,7 @@ public class Convesaciones : MonoBehaviour {
         }
         conversaciones.Add(conversacion);
 
-        print("conversacionconversacionconversacionconversacion" + content + "options.Count:" + options.Count);
+
     }
     public List<Dialogos> GetDialogo(string characters, int id)
     {

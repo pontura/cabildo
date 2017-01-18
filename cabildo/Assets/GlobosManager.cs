@@ -90,7 +90,6 @@ public class GlobosManager : MonoBehaviour {
     }
     void OnGloboPopup(string id)
     {
-        print("OnGloboPopup " + id);
         CheckForHeaderText(id);
         switch (id)
         {
@@ -147,7 +146,6 @@ public class GlobosManager : MonoBehaviour {
     }
     void OnClick(Vector3 pos, string id)
     {
-        print(pos.x);
         if(pos.x>0)
         {
             ResetGlobos2();

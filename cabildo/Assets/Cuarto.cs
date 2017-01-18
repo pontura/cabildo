@@ -35,13 +35,11 @@ public class Cuarto : MonoBehaviour
             case UICuarto.sexs.MUJER: animNAme = "armario" + "Mujer" + animNAme; break;
             case UICuarto.sexs.VARON: animNAme = "armario" + "Hombre" + animNAme; break;
         }
-        print(animNAme);
         anim.Play(animNAme);
     }
     public void SetRopa(UICuarto.sexs sex, int id)
     {
         ResetRopas(sex);
-        print(sex +     "  id:   " + id);
         switch (sex)
         {
             case UICuarto.sexs.MUJER:
@@ -66,7 +64,6 @@ public class Cuarto : MonoBehaviour
     }
     private void SetRopa(GameObject[] ropas)
     {
-        print("__________" + ropas);
         foreach (GameObject go in ropas)
             go.SetActive(true);
     }
