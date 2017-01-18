@@ -2,3 +2,7 @@ build/Run_Data/
 build/Run.exe
 build/cabildo.zip
 build/cabildo.rar
+cabildo/Assets/Images/UI/btnBochas.png.meta
+cabildo/Assets/Images/UI/btnPerinola.png.meta
+cabildo/Assets/Images/UI/btnPulperia.png.meta
+cabildo/Assets/Images/UI/globoPulperia.png.meta
