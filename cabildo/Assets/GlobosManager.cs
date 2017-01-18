@@ -26,6 +26,7 @@ public class GlobosManager : MonoBehaviour {
 
     public UIPulperia pulperia;
     public UIBochas bochas;
+    public UIPerinola perinola;
 
     private Texts texts;
 
@@ -37,6 +38,7 @@ public class GlobosManager : MonoBehaviour {
 
         pulperia.gameObject.SetActive(false);
         bochas.gameObject.SetActive(false);
+        perinola.gameObject.SetActive(false);
 
         texts = Data.Instance.texts;
         Events.OnClick += OnClick;
@@ -92,7 +94,6 @@ public class GlobosManager : MonoBehaviour {
         CheckForHeaderText(id);
         switch (id)
         {
-           // case "banio": banio.SetActive(true); break;
             case "cocina": cocina.gameObject.SetActive(true); break;
             case "cuarto": cuarto.gameObject.SetActive(true); break;
             case "aljibe": aljibe.gameObject.SetActive(true); break;
@@ -101,14 +102,12 @@ public class GlobosManager : MonoBehaviour {
     }
     void OnGlobo2Popup(string id)
     {
-        print("OnGlobo2Popup " + id);
         CheckForHeaderText(id);
         switch (id)
         {
-            // case "banio": banio.SetActive(true); break;
             case "localPulperia": pulperia.gameObject.SetActive(true); break;
             case "bochas": bochas.gameObject.SetActive(true); break;
-            case "": bochas.gameObject.SetActive(true); break;
+            case "perinola": perinola.gameObject.SetActive(true); break;
         }
         globoPopup2.gameObject.SetActive(true);
     }
@@ -144,6 +143,7 @@ public class GlobosManager : MonoBehaviour {
     {
         pulperia.gameObject.SetActive(false);
         bochas.gameObject.SetActive(false);
+        perinola.gameObject.SetActive(false);
     }
     void OnClick(Vector3 pos, string id)
     {
@@ -192,6 +192,9 @@ public class GlobosManager : MonoBehaviour {
                 globoCasa.gameObject.SetActive(true);
                 break;
             case "pulperia":
+                globoPulperia.gameObject.SetActive(true);
+                break;
+            case "perinola":
                 globoPulperia.gameObject.SetActive(true);
                 break;
         }

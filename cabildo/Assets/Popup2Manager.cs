@@ -5,7 +5,7 @@ public class Popup2Manager : MonoBehaviour {
 
     public GameObject localPulperia;
     public GameObject bochas;
-    public GameObject nada;
+    public GameObject perinola;
 
     public Camera cameraPopup;
 
@@ -24,7 +24,7 @@ public class Popup2Manager : MonoBehaviour {
         {
             case "localPulperia": localPulperia.SetActive(true); break;
             case "bochas": bochas.SetActive(true); break;
-            case "cuarto": nada.SetActive(true); break;
+            case "perinola": perinola.SetActive(true); break;
         }
         cameraPopup.enabled = true;
     }
@@ -32,5 +32,6 @@ public class Popup2Manager : MonoBehaviour {
     {
         localPulperia.SetActive(false);
         bochas.SetActive(false);
+        perinola.SetActive(false);
     }
 }
