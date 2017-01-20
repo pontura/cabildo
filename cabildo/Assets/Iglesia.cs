@@ -3,8 +3,12 @@ using System.Collections;
 
 public class Iglesia : MonoBehaviour {
 
-    public Character HombreRico1;
-    public Character MujerRica1;
+    public Character Hombre1;
+    public Character Mujer1;
+
+    public Character Hombre2;
+    public Character Mujer2;
+    public Character Hombre3;
 
     private Animation anim;
 
@@ -28,18 +32,25 @@ public class Iglesia : MonoBehaviour {
     {
         state = states.ACTIVE;
         anim.Play("active");
-        Invoke("Idle", 10);
+        Invoke("Idle", 12);
     }
     void Idle()
     {
         state = states.IDLE;
         anim.Play("idle");
-        MujerRica1.Restart();
-        HombreRico1.Restart();
+        
+        Hombre1.Restart();
+        Hombre2.Restart();
+        Hombre3.Restart();
+        Mujer1.Restart();
+        Mujer2.Restart();
     }
     public void Walk_Ricos()
     {
-        MujerRica1.Walk();
-        HombreRico1.Walk();
+        Hombre1.Walk();
+        Hombre2.Walk();
+        Hombre3.Walk();
+        Mujer1.Walk();
+        Mujer2.Walk();
     }
 }

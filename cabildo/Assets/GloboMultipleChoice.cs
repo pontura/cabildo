@@ -9,11 +9,25 @@ public class GloboMultipleChoice : MonoBehaviour
     public SimpleButton simpleButton;
     public Transform container;
     List<string> onClick;
+    private string title;
 
-    public void Init(Texts.MultipleChoice mc)
+    void Start()
     {
-        Utils.RemoveAllChildsIn(container);  
-       
+        Events.ConversationKill += ConversationKill;
+    }
+    void OnDestroy()
+    {
+        Events.ConversationKill -= ConversationKill;
+    }
+    void ConversationKill(string _title)
+    {
+        if (title == _title)
+            Destroy(gameObject);
+    }
+    public void Init(string title, Texts.MultipleChoice mc)
+    {
+        Utils.RemoveAllChildsIn(container);
+        this.title = title;
         field.text = mc.title;
         this.onClick = mc.onClick;
 

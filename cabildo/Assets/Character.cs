@@ -11,7 +11,8 @@ public class Character : MonoBehaviour {
     public enum states
     {
         IDLE,
-        WALK
+        WALK,
+        SELL
     }
     void Start()
     {
@@ -32,5 +33,36 @@ public class Character : MonoBehaviour {
 	public void Walk()
     {
         anim.Play("walk_1");
+    }
+    public void WalkEmpty()
+    {
+        anim.Play("walk_empty");
+    }
+    public void WalkFull()
+    {
+        anim.Play("walk_full");
+    }
+    public void Buy(string type)
+    {
+        switch(type)
+        {
+            case "water": anim.Play("buy_water");  break;
+            case "milk": anim.Play("buy_milk"); break;
+        }
+    }
+    public void WalkNormal()
+    {
+        state = states.WALK;
+        anim.Play("walk");
+    }
+    public void Sell()
+    {
+        state = states.SELL;
+        anim.Play("sell");
+    }
+    public void IdleNormal()
+    {
+        state = states.IDLE;
+        anim.Play("idle");
     }
 }

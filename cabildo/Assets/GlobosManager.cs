@@ -133,7 +133,7 @@ public class GlobosManager : MonoBehaviour {
         cocina.globoReceta.gameObject.SetActive(false);
         cocina.globoVerReceta.gameObject.SetActive(false);
         globoSimpleAbajo.gameObject.SetActive(false);
-        globoMultipleChoice.gameObject.SetActive(false);
+       // globoMultipleChoice.gameObject.SetActive(false);
         globoFoto.gameObject.SetActive(false);
         globoCasa.gameObject.SetActive(false);
         globoPulperia.gameObject.SetActive(false);
@@ -177,9 +177,10 @@ public class GlobosManager : MonoBehaviour {
         Texts.MultipleChoice mc = Data.Instance.texts.GetMultipleChoiceData(id);        
         if (mc != null)
         {
-            globoMultipleChoice.gameObject.SetActive(true);
-            globoMultipleChoice.transform.localPosition = pos;
-            globoMultipleChoice.Init(mc);
+            GloboMultipleChoice newGloboMultipleChoice = Instantiate(globoMultipleChoice);
+            newGloboMultipleChoice.transform.SetParent(this.transform);
+            newGloboMultipleChoice.transform.localPosition = pos;
+            newGloboMultipleChoice.Init(id, mc);
         }
     }
     void CheckSpecialGlobo(string id)
