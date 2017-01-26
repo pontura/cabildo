@@ -21,7 +21,7 @@ public class CasaPudiente : MonoBehaviour {
         anim = GetComponent<Animator>();
         Events.OnClick += OnClick;
 
-        negrito.WalkEmpty();
+        //negrito.WalkEmpty();
         anim.Play("start");
     }
     public void Idle()
