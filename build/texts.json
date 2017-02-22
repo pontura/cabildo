@@ -87,7 +87,75 @@
 		text: "Ah, no, no. Está prohibido vender bebidas a esclavos. Pero bueno, dale"
 	},
 	{
+		id:"ranchoZanahorias",
+		text: "rancho donde van las zanahorias"
+	},
+	{
+		id:"rancho",
+		text: "rancho del medio"
+	},
+	{
 		id: "cantina-amigo",
 		text: "Ahí va una ginebra para el amigo"
+	},
+	{
+		id: "mujerRica1",
+		text: "mujerRica1"	
+	},
+	{
+		id: "mujerRica2",
+		text: "mujerRica2"	
+	},
+	{
+		id: "china",
+		text: "china"	
+	},
+	{
+		id: "esclavo",
+		text: "esclavo"	
+	},
+	{
+		id: "farolero",
+		text: "farolero"	
+	},
+	{
+		id: "gaucho",
+		text: "gaucho"	
+	},
+	{
+		id: "HombreRico1",
+		text: "HombreRico1"	
+	},
+	{
+		id: "vendedoraTortas",
+		text: "vendedoraTortas"	
+	},
+	{
+		id: "vendedorEscobas",
+		text: "vendedorEscobas"	
+	},
+	{
+		id: "gauchoRancho",
+		text: "soy el gaucho que toma mate en el rancho"	
+	},
+	{
+		id: "chinaZanahorias",
+		text: "chinaZanahorias"	
+	},
+	{
+		id: "lavandera1",
+		text: "lavandera1"	
+	},
+	{
+		id: "lavandera2",
+		text: "lavandera2"	
+	},
+	{
+		id: "nadador1",
+		text: "nadador1"	
+	},
+	{
+		id: "nadador2",
+		text: "nadador2"	
 	}
 ]

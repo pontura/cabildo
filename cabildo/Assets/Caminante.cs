@@ -12,8 +12,11 @@ public class Caminante : MonoBehaviour {
     public int time_to_cross;
     public int delay_to_appear;
 
+    private Character character;
+
     void Start()
     {
+        character = GetComponent<Character>();
         Loop();
         Events.OnClick += OnClick;
     }
@@ -29,9 +32,11 @@ public class Caminante : MonoBehaviour {
         if (paused)
         {
             iTween.Resume();
+            character.Walk();
             paused = false;
         } else 
         {
+            character.Idle();
             paused = true;
             iTween.Pause(gameObject);
         }
@@ -43,6 +48,7 @@ public class Caminante : MonoBehaviour {
     }
     void StartAnim()
     {
+        character.Walk();
         Vector3 pos = transform.position;
 
         if (direction == directions.LEFT_RIGHT)

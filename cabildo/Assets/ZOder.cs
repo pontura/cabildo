@@ -7,7 +7,9 @@ public class ZOder : MonoBehaviour {
     public enum layers
     {
         LAYER_1,
+        LAYER_3,
         LAYER_5,
+        LAYER_7,
         LAYER_10
     }
 
