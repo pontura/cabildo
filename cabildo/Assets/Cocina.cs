@@ -58,15 +58,19 @@ public class Cocina : MonoBehaviour {
     {
         if (minigame == minigames.COMPLETE)
         {
+			print("cocina minigames.COMPLETE: " + clicked);
             switch (clicked)
             {
                 case "mulata-otra":
                     minigame = minigames.NONE;
                     Events.ResetGlobos();
                     uiCocina.VerRecetaButtonOn();
+					uiCocina.EmptyAllRecetas();
                     break;
                 case "mulata-done":
+					minigame = minigames.NONE;
                     Events.ResetGlobos();
+					uiCocina.EmptyAllRecetas();
                     Events.ResetPopup(GlobosManager.sides.LEFT);
                     break;
             }
@@ -76,16 +80,22 @@ public class Cocina : MonoBehaviour {
 
         if (minigame == minigames.NONE)
         {
-            print("cocina: " + clicked);
+			print("cocina minigames.NONE: " + clicked);
             switch (clicked)
             {
-                case "aceite":
-                    if (CheckIfAvailableSelectIngrediente(minigames.ACEITE))
-                    {
-                        minigame = minigames.ACEITE;
-                        InitGame(aceite.gameObject);
-                    }
+				case "mulata-otra":
+					Events.ResetGlobos ();
+					break;
+				case "mulata-done":
+					Events.ResetGlobos ();
                     break;
+				case "aceite":
+					if (CheckIfAvailableSelectIngrediente(minigames.ACEITE))
+					{
+						minigame = minigames.ACEITE;
+						InitGame(aceite.gameObject);
+					}
+					break;
                 case "papas":
                     if (CheckIfAvailableSelectIngrediente(minigames.PAPAS))
                     {

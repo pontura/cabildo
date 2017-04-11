@@ -59,6 +59,18 @@ public class UICocina : MonoBehaviour {
         line.ready = true;
         line.readyImage.gameObject.SetActive(true);
     }
+	public void EmptyAllRecetas()
+	{
+		print("_____________ EmptyAllRecetas");
+		EmptyReceta(receta_puchero);
+		EmptyReceta(receta_locro);
+		EmptyReceta(receta_carbonada);
+	}
+	void EmptyReceta(RecetaLine[] receta)
+	{		
+		foreach(RecetaLine rl in receta)
+			rl.ready = false;
+	}
     RecetaLine GetIngredienteInReceta(RecetaLine[] receta, Cocina.minigames minigame)
     {
         print("GetIngredienteInReceta" + receta + " minigame + " + minigame);
@@ -69,6 +81,7 @@ public class UICocina : MonoBehaviour {
     }
     void OnMinigameCocinaReady(Cocina.minigames minigame)
     {
+		print("OnMinigameCocinaReady  minigame + " + minigame);
         switch (receta)
         {
             case recetas.PUCHERO:
@@ -81,6 +94,7 @@ public class UICocina : MonoBehaviour {
                 SetReady(receta_carbonada, minigame);
                 break;
         }
+
     }
     RecetaLine[] GetActualRecetaArray()
     {

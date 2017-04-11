@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour {
         mousePos.z = 10;
 
         Vector3 screenPos = main.ScreenToWorldPoint(mousePos);
-        screenPos.x -= 18.4f;
+        screenPos.x -= 18.6f;
         CheckColliderIn(screenPos);
        // CheckColliderIn(screenPos);
     }

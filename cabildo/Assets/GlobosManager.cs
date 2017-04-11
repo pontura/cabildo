@@ -133,7 +133,7 @@ public class GlobosManager : MonoBehaviour {
         cocina.globoReceta.gameObject.SetActive(false);
         cocina.globoVerReceta.gameObject.SetActive(false);
         globoSimpleAbajo.gameObject.SetActive(false);
-       // globoMultipleChoice.gameObject.SetActive(false);
+        globoMultipleChoice.gameObject.SetActive(false);
         globoFoto.gameObject.SetActive(false);
         globoCasa.gameObject.SetActive(false);
         globoPulperia.gameObject.SetActive(false);

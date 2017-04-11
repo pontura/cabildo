@@ -26,6 +26,7 @@ public class GloboMultipleChoice : MonoBehaviour
     }
     public void Init(string title, Texts.MultipleChoice mc)
     {
+		gameObject.SetActive (true);
         Utils.RemoveAllChildsIn(container);
         this.title = title;
         field.text = mc.title;
@@ -42,7 +43,8 @@ public class GloboMultipleChoice : MonoBehaviour
         }
     }
     public void TaskOnClick(SimpleButton sb)
-    {
+    {		
         Events.OnClick(transform.position,  onClick[sb.id]);
+		Destroy(gameObject);
     }
 }

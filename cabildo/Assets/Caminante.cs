@@ -43,7 +43,6 @@ public class Caminante : MonoBehaviour {
     }
     void Loop()
     {
-        print("Loop");
         Invoke("StartAnim", delay_to_appear);
     }
     void StartAnim()
@@ -51,14 +50,17 @@ public class Caminante : MonoBehaviour {
         character.Walk();
         Vector3 pos = transform.position;
 
-        if (direction == directions.LEFT_RIGHT)
-            pos.x = -10;
-        else
-            pos.x = 10;
-        transform.position = pos;
+		float newPos;// = (pos.x * -1) * 2;
 
-        float newPos = (pos.x * -1) * 2;
-        if (transform.localScale.x < 0) newPos *= -1;
+
+		if (direction == directions.LEFT_RIGHT) {
+			pos.x = -10;
+			newPos = 10;
+		} else {
+			pos.x = 10;
+			newPos = -10;
+		}
+        transform.position = pos;       
 
         iTween.MoveBy(gameObject, iTween.Hash(
             "x", newPos,
