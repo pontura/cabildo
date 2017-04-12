@@ -7,7 +7,8 @@ public class InputManager : MonoBehaviour {
 
     void Update()
     {
-
+		if (Input.GetKeyDown (KeyCode.Q))
+			Application.Quit ();
         if (Input.GetMouseButtonDown(0))
         {
             if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
