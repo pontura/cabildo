@@ -29,6 +29,23 @@ public class PerinolaMonedasManager : MonoBehaviour {
         newMoneda.Init(perinola, state);
         monedas.Add(newMoneda);
     }
+	public int GetWinner()
+	{
+		bool player1_has_monedas = false;
+		bool player2_has_monedas = false;
+		foreach (PerinolaMoneda m in monedas) {
+			if (m.state == PerinolaMoneda.states.PLAYER_1)
+				player1_has_monedas = true;
+			else if (m.state == PerinolaMoneda.states.PLAYER_2)
+				player2_has_monedas = true;
+		}
+		if(!player1_has_monedas)
+			return 2;
+		else if(!player2_has_monedas)
+			return 1;
+		else
+			return 0;
+	}
     public void SetResult(PerinolaAsset.results result)
     {
         switch(result)
@@ -139,4 +156,18 @@ public class PerinolaMonedasManager : MonoBehaviour {
             }
         }
     }
+	public void Restart()
+	{
+		foreach (PerinolaMoneda m in monedas)
+		{
+			if (m.state == PerinolaMoneda.states.PLAYER_1)
+			{
+				m.ChangeState(PerinolaMoneda.states.POZO);
+			}
+			else if (m.state == PerinolaMoneda.states.PLAYER_2)
+			{
+				m.ChangeState(PerinolaMoneda.states.POZO);
+			}
+		}
+	}
 }

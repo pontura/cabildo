@@ -7,11 +7,15 @@ public class UIPerinola : MonoBehaviour {
     public GameObject playEquipo2;
     public int teamId;
     public Perinola game;
+	public GameObject ganador1;
+	public GameObject ganador2;
 
     void OnEnable()
     {
-        teamId = 1;
+		teamId = 1;
         Restart();
+		ganador1.SetActive (false);
+		ganador2.SetActive (false);
     }
     public void Restart()
     {        
@@ -40,11 +44,19 @@ public class UIPerinola : MonoBehaviour {
     {
         ResetButtons();
         game.OnPerinola();
+
     }
     void ResetButtons()
     {
         playEquipo2.SetActive(false);
         playEquipo1.SetActive(false);
     }
+	public void Gana(int id)
+	{
+		if(id==1)
+			ganador1.SetActive(true);
+		else
+			ganador2.SetActive(true);
+	}
     
 }

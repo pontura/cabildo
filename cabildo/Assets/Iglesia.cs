@@ -9,6 +9,7 @@ public class Iglesia : MonoBehaviour {
     public Character Hombre2;
     public Character Mujer2;
     public Character Hombre3;
+	public Character Sirviente;
 
     private Animation anim;
 
@@ -44,6 +45,7 @@ public class Iglesia : MonoBehaviour {
         Hombre3.Restart();
         Mujer1.Restart();
         Mujer2.Restart();
+		Sirviente.Restart ();
     }
     public void Walk_Ricos()
     {
@@ -52,5 +54,6 @@ public class Iglesia : MonoBehaviour {
         Hombre3.Walk();
         Mujer1.Walk();
         Mujer2.Walk();
+		Sirviente.Walk();
     }
 }

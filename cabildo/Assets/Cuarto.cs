@@ -18,6 +18,10 @@ public class Cuarto : MonoBehaviour
     public GameObject[] varonRopa2;
     public GameObject[] varonRopa3;
 
+	public GameObject mujerSaleBanio;
+	public GameObject hombreSaleBanio;
+
+
     void OnEnable()
     {
         armarioOpened = false;
@@ -89,4 +93,24 @@ public class Cuarto : MonoBehaviour
                 break;
         }
     }
+	public void EntraBanio(UICuarto.sexs sex)
+	{
+		if (sex == UICuarto.sexs.MUJER)
+			animMujer.Play ("bañoSplash");
+		else
+			animVaron.Play ("bañoSplash");
+	}
+	public void SaleBanio(UICuarto.sexs sex)
+	{
+		if (sex == UICuarto.sexs.MUJER)
+			mujerSaleBanio.SetActive (true);
+		else
+			hombreSaleBanio.SetActive (true);
+		Invoke ("ResetAnims", 1);
+	}
+	void ResetAnims()
+	{
+		mujerSaleBanio.SetActive (false);
+		hombreSaleBanio.SetActive (false);
+	}
 }

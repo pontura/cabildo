@@ -170,7 +170,7 @@ public class Cocina : MonoBehaviour {
                     porotos.PlayAnim("tirarPorotos", 0.4f);
                     break;
                 case "hace_cebolla":
-                    cebolla.PlayAnim("cortarCebolla", 0.7f);
+                    cebolla.PlayAnim("cortarCebolla", 0.5f);
                     break;
                 case "hace_sal":
                     sal.PlayAnim("tirarSal", 0.4f, 2);

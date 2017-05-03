@@ -45,6 +45,7 @@ public class Perinola : MonoBehaviour {
         state = states.ROTATE_1;
         rotationSpeed = defaultSpeed;
     }
+
     void Update()
     {
         Vector3 rot = perinola.transform.localEulerAngles;
@@ -77,7 +78,11 @@ public class Perinola : MonoBehaviour {
         state = states.DONE;
         //perinola.transform.localEulerAngles = Vector3.zero;
         manager.SetResult(asset.result);
-        ui.Restart();
+		int winner = manager.GetWinner ();
+		if (winner == 0)
+			ui.Restart ();
+		else
+			ui.Gana (winner);
     }
     private float Rand_X = 100;
     private float Rand_Y = 100;

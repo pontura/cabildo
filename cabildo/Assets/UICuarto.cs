@@ -47,6 +47,7 @@ public class UICuarto : MonoBehaviour {
             if (!baniaBoy.activeSelf) return;
             boy.SetActive(true); baniaBoy.SetActive(false);
         }
+		cuarto.SaleBanio (selectedSex);
     }
     public void RopaSelected(int id)
     {
@@ -93,9 +94,20 @@ public class UICuarto : MonoBehaviour {
 
         switch(selectedSex)
         {
-            case sexs.MUJER: girl.SetActive(false); baniaGirl.SetActive(true); break;
-            case sexs.VARON: boy.SetActive(false); baniaBoy.SetActive(true); break;
+		case sexs.MUJER: 
+			girl.SetActive (false); 
+			baniaGirl.SetActive (true); 
+			boy.SetActive (true); 
+			baniaBoy.SetActive (false); 
+			break;
+            case sexs.VARON: 
+				boy.SetActive(false); 
+				baniaBoy.SetActive(true); 
+			girl.SetActive(true); 
+			baniaGirl.SetActive(false); 
+			break;
         }
+		cuarto.EntraBanio (selectedSex);
         UpdateUI();
     }
     void Reset()

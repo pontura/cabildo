@@ -31,6 +31,8 @@ public class Caminante : MonoBehaviour {
         if (title != gameObject.name) return;
         if (paused)
         {
+			print ("OnClick " + title + " " + gameObject.name);
+
             iTween.Resume();
             character.Walk();
             paused = false;
@@ -63,7 +65,7 @@ public class Caminante : MonoBehaviour {
         transform.position = pos;       
 
         iTween.MoveBy(gameObject, iTween.Hash(
-            "x", newPos,
+            "x", newPos*2,
             "time", time_to_cross,
             "oncomplete", "Loop",
             "easetype", "linear"
