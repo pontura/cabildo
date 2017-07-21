@@ -14,35 +14,50 @@ public class Caminante : MonoBehaviour {
 
     private Character character;
 
+
     void Start()
     {
         character = GetComponent<Character>();
         Loop();
         Events.OnClick += OnClick;
+		Events.ConversationKill += ConversationKill;
     }
     void OnDestroy()
     {
         Loop();
         Events.OnClick -= OnClick;
+		Events.ConversationKill -= ConversationKill;
     }
     private bool paused;
     void OnClick(Vector3 pos, string title)
     {
-        if (title != gameObject.name) return;
-        if (paused)
-        {
-			print ("OnClick " + title + " " + gameObject.name);
 
-            iTween.Resume();
-            character.Walk();
-            paused = false;
-        } else 
-        {
+		if (paused || title != gameObject.name) return;
+
+//        if (paused)
+//        {
+//			iTween.Resume(gameObject);
+//            character.Walk();
+//            paused = false;
+//        } else 
+//        {
             character.Idle();
             paused = true;
-            iTween.Pause(gameObject);
-        }
+			iTween.Pause(gameObject);
+			Vector3 pos3 = Input.mousePosition;
+			pos3.x -= Screen.width / 2;
+			pos3.y -= Screen.height / 2;
+			string text = Data.Instance.conversaciones.GetSimpleText(title);
+			Events.OnGloboSimpleTimeOut (title, new Vector2(pos3.x-10, pos3.y+50), text, 2);
+//        }
     }
+	void ConversationKill(string title)
+	{
+		if (title != gameObject.name) return;
+		iTween.Resume(gameObject);
+		character.Walk();
+		paused = false;
+	}
     void Loop()
     {
         Invoke("StartAnim", delay_to_appear);

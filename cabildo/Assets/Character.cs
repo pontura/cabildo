@@ -32,7 +32,6 @@ public class Character : MonoBehaviour {
     }
 	public void Walk()
     {
-		print ("walk" + gameObject.name);
         anim.Play("walk_1");
     }
     public void WalkEmpty()

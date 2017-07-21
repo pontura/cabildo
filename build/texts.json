@@ -2,7 +2,7 @@
 	{
 		id: "casaCheta",
 		title: "Casa Pudiente",
-		text: "La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla...La casa pudiente de bla bla bla..."
+		text: "Hasta mitad del siglo XVIII las casas urbanas no contaron con una gran arquitectura. Solían ser pequeñas, con mala iluminación, paredes de ladrillo o adobe, ventanas sin vidrio y grandes patios. Ya en el siglo XVIII los cambios económicos iniciados se expresaron en grandes construcciones privadas y públicas; las casas empezaron a contar con varios patios y grandes salones, las más chicas estaban construidas alrededor de un solo patio, y las mínimas, de un único cuarto de alquiler."
 	},
 	{
 		id: "iglesia",
@@ -44,6 +44,38 @@
 		title: "Baño",
 		text: "Algún texto sobre el baño..."
 	},	
+	{
+		id: "banio-hombre",
+		text: "¡Hora del baño semanal!. Toda la familia se baña con esta misma agua. ¡No la vamos a desperdiciar!"
+	},
+	{
+		id: "banio-mujer",
+		text: "¡Ahhh! El agua que calentó Juana en el fogón está como me gusta. Pronto cambiaremos esta bañera de madera por una mejor de latón"
+	},	
+	{
+		id: "traje-1-hombre",
+		text: "Es un traje refinado, aunque me va un poco ajustado."	
+	},
+	{
+		id: "traje-2-hombre",
+		text: "No sos realmente elegante si no llevás galera"	
+	},
+	{
+		id: "traje-3-hombre",
+		text: "Me encanta vestirme como un lord inglés."	
+	},	
+	{
+		id: "traje-1-mujer",
+		text: "¡Nunca salgo de casa sin mantilla!"	
+	},
+	{
+		id: "traje-2-mujer",
+		text: "Mi peineta es española y tallada en carey, ¿te gusta?"	
+	},
+	{
+		id: "traje-3-mujer",
+		text: "Este vestido con chaqueta Spencer es mi favorito."	
+	},
 	{
 		id: "negrito",
 		multiple-choice: 
@@ -157,5 +189,9 @@
 	{
 		id: "nadador2",
 		text: "nadador2"	
+	},
+	{
+		id: "tortugas",
+		text: "Se echan carbones al agua para purificarla y tortugas para saber si está buena. Además, se comen los bichitos"	
 	}
 ]

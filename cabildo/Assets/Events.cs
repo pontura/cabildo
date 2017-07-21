@@ -22,12 +22,14 @@ public static class Events
     public static System.Action<string> OnGloboPopup = delegate { };
     public static System.Action<string> OnGlobo2Popup = delegate { };
     public static System.Action<string, Vector2, string> OnGloboSimple = delegate { };
+	public static System.Action<string, Vector2, string, int> OnGloboSimpleTimeOut = delegate { };
+
     public static System.Action<Vector2, string> OnGloboMultipleChoice = delegate { };
     public static System.Action<Vector2, string, int> OnGloboSimpleAbajo = delegate { };    
 
     public static System.Action OnHeaderOff = delegate { };
     public static System.Action OnHeader2Off = delegate { };
-    public static System.Action<Vector3> OnClickOutside = delegate { };
+    public static System.Action<bool> OnClickOutside = delegate { };
 
     public static System.Action<UICocina.recetas> OnVerReceta = delegate { };
     

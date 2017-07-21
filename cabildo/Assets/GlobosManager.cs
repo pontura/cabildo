@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GlobosManager : MonoBehaviour {
@@ -47,6 +48,7 @@ public class GlobosManager : MonoBehaviour {
         Events.OnGloboMultipleChoice += OnGloboMultipleChoice;
         Events.OnClickOutside += OnClickOutside;
         Events.OnGloboSimple += OnGloboSimple;
+		Events.OnGloboSimpleTimeOut += OnGloboSimpleTimeOut;
         Events.OnGloboSimpleAbajo += OnGloboSimpleAbajo;
         Events.ResetGlobos += ResetGlobos;
         Events.ResetGlobos2 += ResetGlobos2;
@@ -61,6 +63,7 @@ public class GlobosManager : MonoBehaviour {
         Events.OnGloboMultipleChoice -= OnGloboMultipleChoice;
         Events.OnClickOutside -= OnClickOutside;
         Events.OnGloboSimple -= OnGloboSimple;
+		Events.OnGloboSimpleTimeOut -= OnGloboSimpleTimeOut;
         Events.OnGloboSimpleAbajo -= OnGloboSimpleAbajo;
         Events.ResetPopup -= ResetPopup;
         Events.ResetGlobos -= ResetGlobos;
@@ -73,6 +76,21 @@ public class GlobosManager : MonoBehaviour {
         if (side == sides.RIGHT)
             globoPopup2.gameObject.SetActive(false);
     }
+	void OnGloboSimpleTimeOut(string title, Vector2 pos, string text, int timeOut)
+	{
+		GloboInfo newGloboSimple = Instantiate(globoSimple);
+		newGloboSimple.transform.SetParent(this.transform);
+		newGloboSimple.transform.localPosition = pos;
+		newGloboSimple.Init(title, text);
+		StartCoroutine (ResetThisGlobo (title, timeOut));
+	}
+	IEnumerator ResetThisGlobo(string title, int timeOut)
+	{
+		print ("1 ResetThisGlobo " + title);
+		yield return new WaitForSeconds (timeOut);
+		print ("2  " + title);
+		Events.ConversationKill (title); 	
+	}
     void OnGloboSimple(string title, Vector2 pos, string text)
     {
         GloboInfo newGloboSimple = Instantiate(globoSimple);
@@ -101,7 +119,7 @@ public class GlobosManager : MonoBehaviour {
     }
     void OnGlobo2Popup(string id)
     {
-        CheckForHeaderText(id);
+		CheckForHeaderText2(id);
         switch (id)
         {
             case "localPulperia": pulperia.gameObject.SetActive(true); break;
@@ -110,9 +128,9 @@ public class GlobosManager : MonoBehaviour {
         }
         globoPopup2.gameObject.SetActive(true);
     }
-    void OnClickOutside(Vector3 pos)
+    void OnClickOutside(bool isLeft)
     {
-        if(pos.x>0)
+		if(!isLeft)
         {
             ResetGlobos2();
             Events.OnHeader2Off();
@@ -130,6 +148,7 @@ public class GlobosManager : MonoBehaviour {
     {
         cuarto.gameObject.SetActive(false);
         aljibe.gameObject.SetActive(false);
+		//cocina.gameObject.SetActive(false);
         cocina.globoReceta.gameObject.SetActive(false);
         cocina.globoVerReceta.gameObject.SetActive(false);
         globoSimpleAbajo.gameObject.SetActive(false);
@@ -144,8 +163,10 @@ public class GlobosManager : MonoBehaviour {
         bochas.gameObject.SetActive(false);
         perinola.gameObject.SetActive(false);
     }
+	public Text field;
     void OnClick(Vector3 pos, string id)
     {
+		//field.text += "pos: " + pos;
         if(pos.x>0)
         {
             ResetGlobos2();

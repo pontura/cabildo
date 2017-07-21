@@ -5,6 +5,7 @@ using System;
 
 public class UICocina : MonoBehaviour {
     
+	public GameObject popupLeft;
     public GameObject globoReceta;
     public GameObject globoVerReceta;
 
@@ -166,6 +167,8 @@ public class UICocina : MonoBehaviour {
     }
     public void VerRecetaButtonOn()
     {
+		if (!popupLeft.activeSelf)
+			return;
         Events.ResetGlobos();
         globoVerReceta.gameObject.SetActive(true);
         globoReceta.SetActive(false);
@@ -177,6 +180,8 @@ public class UICocina : MonoBehaviour {
     }
     public void IngredienteReady()
     {
+		if (!popupLeft.activeSelf)
+			return;
         globoVerReceta.gameObject.SetActive(false);
         globoReceta.SetActive(true);
     }
