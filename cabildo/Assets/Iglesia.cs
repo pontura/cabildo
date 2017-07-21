@@ -26,7 +26,7 @@ public class Iglesia : MonoBehaviour {
     }	
     void OnClick(Vector3 pos, string title)
     {
-        if (state == states.IDLE && title == "iglesia")
+        if (state == states.IDLE && title == "campana")
             SetActive();
     }
     void SetActive()

@@ -57,7 +57,9 @@ public class Convesaciones : MonoBehaviour {
 
             AddConversacion("cantina", content[0]["pulperia"]);
             AddConversacion("bebedores", content[0]["pulperia"]);
-            AddConversacion("guitarrista", content[0]["pulperia"]);
+           // AddConversacion("guitarrista", content[0]["pulperia"]);
+
+		AddSimpleConversacion("personas", content[0]["caminantes"]);
            
     }
     void AddConversacion(string characters, JSONNode content)
@@ -83,8 +85,38 @@ public class Convesaciones : MonoBehaviour {
         }
         conversaciones.Add(conversacion);
 
-
     }
+	void AddSimpleConversacion(string characters, JSONNode content)
+	{        
+		Conversacion conversacion = new Conversacion();
+		conversacion.characters = characters;
+		conversacion.dialogos = new List<Dialogos>();
+		JSONNode options = (JSONNode)(content[characters]);
+		for (int a = 0; a < options.Count; a++)
+		{
+			Dialogos dialogos = new Dialogos();
+			dialogos.temas = new List<Tema>();
+			JSONNode temas = (JSONNode)(options[a]);
+			Tema tema = new Tema();
+			tema.persona = temas["persona"];
+			tema.frase = temas["frase"];
+			dialogos.temas.Add(tema);
+			conversacion.dialogos.Add(dialogos);
+		}
+		conversaciones.Add(conversacion);
+	}
+	public string GetSimpleText(string character)
+	{
+		foreach (Conversacion c in conversaciones) {
+			if (c.characters == "personas") {
+				foreach (Dialogos d in c.dialogos) {
+					if (d.temas [0].persona == character)
+						return d.temas [0].frase;
+				}
+			}
+		}
+		return "";
+	}
     public List<Dialogos> GetDialogo(string characters, int id)
     {
         foreach(Conversacion conv in conversaciones)

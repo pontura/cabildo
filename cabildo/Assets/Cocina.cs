@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Cocina : MonoBehaviour {
 
+	public GameObject popupLeft;
     public CocinaCortarAnim zapallo;
     public CocinaCortarAnim papas;
     public CocinaCortarAnim cebolla;
@@ -152,25 +153,25 @@ public class Cocina : MonoBehaviour {
             switch (clicked)
             {
                 case "hace_aceite":
-                    aceite.PlayAnim("tirarAceite", 0f, 3);
+                    aceite.PlayAnim("tirarAceite", 0f, 5);
                     break;
                 case "hace_papa":
-                    papas.PlayAnim("cortePapa", 0.5f, 2);
+                    papas.PlayAnim("cortePapa", 0.3f, 2);
                     break;
                 case "hace_arroz":
                     arroz.PlayAnim("tirarArroz", 0.6f);
                     break;
                 case "hace_zanahoria":
-                    zanahoria.PlayAnim("corteZanahoria", 0.8f);
+                    zanahoria.PlayAnim("corteZanahoria", 0.8f, 2);
                     break;
                 case "hace_zapallo":
-                    zapallo.PlayAnim("corteZapallo", 0.4f);
+                    zapallo.PlayAnim("corteZapallo", 0.4f, 2);
                     break;
                 case "hace_porotos":
                     porotos.PlayAnim("tirarPorotos", 0.4f);
                     break;
                 case "hace_cebolla":
-                    cebolla.PlayAnim("cortarCebolla", 0.5f);
+                    cebolla.PlayAnim("cortarCebolla", 0.5f, 2);
                     break;
                 case "hace_sal":
                     sal.PlayAnim("tirarSal", 0.4f, 2);
@@ -185,6 +186,8 @@ public class Cocina : MonoBehaviour {
     }
     void OnMinigameReady()
     {    
+		if (!popupLeft.activeSelf)
+			return;
         Events.OnMinigameCocinaReady(minigame);        
         ResetAllGames();
         
@@ -219,12 +222,17 @@ public class Cocina : MonoBehaviour {
     }    
     void OpenGloboSimpleAbajo(string text)
     {
+		if (!popupLeft.activeSelf)
+			return;
         Events.OnGloboSimpleAbajo(mulataPos, text, 3);
         uiCocina.VerRecetaButtonOff();
         Invoke("VerRecetaButtonOn", 2);
     }
     void VerRecetaButtonOn()
     {
+		if (!popupLeft.activeSelf)
+			return;
+		
         uiCocina.VerRecetaButtonOn();
         //uiCocina.IngredienteReady();
         if(minigame == minigames.READY)
