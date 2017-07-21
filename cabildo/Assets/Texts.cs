@@ -43,6 +43,7 @@ public class Texts : MonoBehaviour
     }
     IEnumerator Example()
     {
+		pathPreFix = "file://" + Application.dataPath + "/../";
         string filePath = pathPreFix + "texts.json";
         WWW www = new WWW(filePath);
         yield return www;

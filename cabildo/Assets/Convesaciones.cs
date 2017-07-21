@@ -9,7 +9,8 @@ public class Convesaciones : MonoBehaviour {
 
     public ConversationActive conversation;
     public string result = "";
-    private string pathPreFix = @"file://";
+ //   private string pathPreFix = @"file://";
+	private string pathPreFix = "D:/cabildo/cabildo/";
 
     public List<Conversacion> conversaciones;
 
@@ -38,14 +39,18 @@ public class Convesaciones : MonoBehaviour {
     }
     IEnumerator Example()
     {
+		pathPreFix = "file://" + Application.dataPath + "/../";
         string filePath = pathPreFix + "conversaciones.json";
+		print (filePath);
         WWW www = new WWW(filePath);
+
         yield return www;
         result = www.text;
         LoadDataromServer(result);
     }
     public void LoadDataromServer(string json_data)
     {
+		print (json_data);
         var Json = SimpleJSON.JSON.Parse(json_data);
         fillArray(Json);
     }
