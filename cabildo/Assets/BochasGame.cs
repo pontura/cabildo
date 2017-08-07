@@ -11,16 +11,21 @@ public class BochasGame : MonoBehaviour {
     public GameObject bochin;
 
     public GameObject bocha;
-    public Transform target;
+    public Transform _target;
     public Material mat1;
     public Material mat2;
     public int id = 0;
     private GameObject newBocha;
     public Vector3 bochinPos;
 
-    void OnEnable () {
-        bochin.transform.localPosition = bochinPos;
-        bochin.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    void Start () {
+		bochin.transform.localPosition = bochinPos;
+		bochin.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+		Events.OnMinigameBochasReady += OnMinigameBochasReady;
+	}
+	void OnMinigameBochasReady()
+	{    
 
         id = 0;
         foreach (GameObject bocha in bochas)
@@ -42,13 +47,14 @@ public class BochasGame : MonoBehaviour {
             newBocha.GetComponent<MeshRenderer>().material = mat2;
 
         newBocha.GetComponent<BochaBall>().id = id;
-        newBocha.transform.SetParent(target);
+		newBocha.transform.SetParent(_target);
         newBocha.transform.localPosition = Vector3.zero;
 
         bochas.Add(newBocha);
     }
     public void Throw(float angle, int speed)
     {
+		Events.OnSFX (Data.Instance.sFXManager.woodPop);
         newBocha.transform.localEulerAngles = new Vector3(0, angle, 0);
         Vector3 force = newBocha.transform.forward * speed;
         newBocha.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
@@ -59,6 +65,7 @@ public class BochasGame : MonoBehaviour {
     {
         float minDistance = 1000;
         int winnerID = 0;
+		print ("Ready ");
         foreach(GameObject bocha in  bochas)
         {
             float newDistance = Vector3.Distance(bocha.transform.position, bochin.transform.position);
@@ -75,5 +82,7 @@ public class BochasGame : MonoBehaviour {
         else
             foreach (Animator anim in team2)
                 anim.Play("applause");
+		
+		Events.OnSFX(Data.Instance.sFXManager.applause);
     }
 }

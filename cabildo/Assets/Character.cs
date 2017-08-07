@@ -26,6 +26,14 @@ public class Character : MonoBehaviour {
         transform.localPosition = pos;
         Idle();
     }
+	public void SoundDrop()
+	{
+		Events.OnSFX (Data.Instance.sFXManager.waterDrop);
+	}
+	public void SoundBuy()
+	{
+		Events.OnSFX (Data.Instance.sFXManager.cash);
+	}
     public void Idle()
     {
         anim.Play("idle_1");

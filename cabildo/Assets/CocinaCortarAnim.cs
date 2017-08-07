@@ -26,6 +26,8 @@ public class CocinaCortarAnim : MonoBehaviour {
         if (playbackTime > ended)
             Ready(timeToReady);
         print(" animName : " + animName + " time : " + playbackTime);
+		if(animName.Substring(0,5)=="corte" || animName.Substring(0,5)=="corta")
+			Events.OnSFX (Data.Instance.sFXManager.woodPop);
     }
     void Ready(float timeToReady)
     {

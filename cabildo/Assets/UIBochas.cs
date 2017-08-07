@@ -31,6 +31,7 @@ public class UIBochas : MonoBehaviour {
     }
     void OnDisable()
     {
+		Events.OnMinigameBochasReady ();
         state = states.CLOSED;
         CancelInvoke();
     }
@@ -48,6 +49,7 @@ public class UIBochas : MonoBehaviour {
     }
 	public void ClickPlay()
     {
+		print ("ClickPlay" + state);	
         if (state == states.AIMING)
         {
             field.text = "Fuerza";
@@ -66,6 +68,7 @@ public class UIBochas : MonoBehaviour {
     }
     void NewTurn()
     {
+		print ("NewTurn tiros: " + tiros);	
         if (state == states.CLOSED)
             return;
         state = states.AIMING;
@@ -86,6 +89,7 @@ public class UIBochas : MonoBehaviour {
     }
     void RemoveBall(int teamID)
     {
+		print ("RemoveBall" + teamID);
         if (teamID == 0)
         {
             foreach (Image im in bolas_rojas.GetComponentsInChildren<Image>())

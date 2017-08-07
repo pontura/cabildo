@@ -44,6 +44,7 @@ public class Perinola : MonoBehaviour {
         asset.Init();
         state = states.ROTATE_1;
         rotationSpeed = defaultSpeed;
+		Events.OnSFX(Data.Instance.sFXManager.perinola);
     }
 
     void Update()

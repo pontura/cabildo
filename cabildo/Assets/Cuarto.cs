@@ -112,6 +112,7 @@ public class Cuarto : MonoBehaviour
     }
 	public void EntraBanio(UICuarto.sexs sex)
 	{
+		Events.OnSFX (Data.Instance.sFXManager.waterDrop);
 		if (sex == UICuarto.sexs.MUJER) {
 			animMujer.Play ("bañoSplash");
 			Events.OnGloboSimpleAbajo(new Vector2(-620, -440), "banio-mujer", 4);

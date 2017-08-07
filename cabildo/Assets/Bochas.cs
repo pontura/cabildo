@@ -4,12 +4,14 @@ using System.Collections;
 public class Bochas : MonoBehaviour {
     void OnEnable()
     {
+		print ("OnEnable");
         Events.OnClick += OnClick;
         Events.OnMinigameReady += OnMinigameReady;
         ResetAllGames();
     }
     void OnDisable()
     {
+		print ("OnDisable");
         Events.OnClick -= OnClick;
         Events.OnMinigameReady -= OnMinigameReady;
     }
@@ -23,7 +25,9 @@ public class Bochas : MonoBehaviour {
     }
     void OnMinigameReady()
     {
-        Events.OnMinigameBanioReady();
+		print ("OnMinigameReady");
+		Events.OnMinigameBanioReady();
+		Events.OnMinigameBochasReady();
         ResetAllGames();
     }
 

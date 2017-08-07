@@ -14,6 +14,7 @@ public class Data : MonoBehaviour
     private float time_ViewingMap = 7.5f;
     public Texts texts;
     public Convesaciones conversaciones;
+	public SFXManager sFXManager;
 
     public static Data Instance
     {
@@ -55,6 +56,7 @@ public class Data : MonoBehaviour
 
         texts = GetComponent<Texts>();
         conversaciones = GetComponent<Convesaciones>();
+		sFXManager = GetComponent<SFXManager> ();
         DontDestroyOnLoad(this);
     }
 }

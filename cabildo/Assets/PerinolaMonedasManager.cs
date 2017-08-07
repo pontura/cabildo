@@ -60,6 +60,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void TomaTodo()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         foreach(PerinolaMoneda m in monedas)
         {
             if(m.state == PerinolaMoneda.states.POZO)
@@ -73,6 +74,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void Toma1()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         foreach (PerinolaMoneda m in monedas)
         {
             if (m.state == PerinolaMoneda.states.POZO)
@@ -87,6 +89,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void Toma2()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         int total = 0;
         foreach (PerinolaMoneda m in monedas)
         {
@@ -104,6 +107,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void Pon1()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         foreach (PerinolaMoneda m in monedas)
         {
             if (perinola.ui.teamId == 1 && m.state == PerinolaMoneda.states.PLAYER_1)
@@ -119,6 +123,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void Pon2()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         int total = 0;
         foreach (PerinolaMoneda m in monedas)
         {
@@ -140,6 +145,7 @@ public class PerinolaMonedasManager : MonoBehaviour {
     }
     void TodosPonen()
     {
+		Events.OnSFX (Data.Instance.sFXManager.cash);
         bool team1Ready = false;
         bool team2Ready = false;
         foreach (PerinolaMoneda m in monedas)

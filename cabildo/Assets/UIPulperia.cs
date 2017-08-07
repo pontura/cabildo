@@ -52,12 +52,18 @@ public class UIPulperia : MonoBehaviour {
     }
     public void Guitarra()
     {
+		Events.OnSFX(Data.Instance.sFXManager.guitar);
+
         hint_guitarra.SetActive(false);
         guitarrista.Play("play");
         foreach (Animator anim in publico)
             anim.Play("dance");
+		Invoke ("Applause", 2f);
     }
-
+	void Applause()
+	{
+		Events.OnSFX(Data.Instance.sFXManager.applause);
+	}
     bool drinking;
     int mateID;
     public void Toma(int id)
