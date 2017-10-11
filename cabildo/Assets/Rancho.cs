@@ -71,16 +71,19 @@ public class Rancho : MonoBehaviour {
     {
         if (state == states.CHINA_WALKING) return;
 
+		int lastZanahoria = 0;
         foreach (SpriteRenderer sr in zanahorias)
         {
+			lastZanahoria++;
             if (sr.enabled)
             {
                 sr.enabled = false;
                 GetZanahoria();
-                return;
+				if(lastZanahoria == zanahorias.Length)
+					WalkIn();
+				return;
             }
         }
-        WalkIn();
     }
     void GetZanahoria()
     {

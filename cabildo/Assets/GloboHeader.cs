@@ -12,6 +12,8 @@ public class GloboHeader : MonoBehaviour
     public AnimationClip openAnim;
     public AnimationClip closeAnim;
     public states state;
+	public Scrollbar scrollBar;
+
     public enum states
     {
         OFF,
@@ -42,6 +44,7 @@ public class GloboHeader : MonoBehaviour
     }
     public void Init(Texts.SimpleContent content)
     {
+		scrollBar.value = 1;
         state = states.ON;
         anim.clip = openAnim;
         anim.Play();

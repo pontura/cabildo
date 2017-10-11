@@ -30,22 +30,25 @@ public class InputManager : MonoBehaviour {
 		}
 
 
-		////////////////Borrar para el build
-		//		if (clicked)
-		//			return;
-		//		
-		//		if(Input.GetMouseButtonDown(0))
-		//		{
-		//			ClickenOn(Input.mousePosition);
-		//		}		/// ////////////////////////////////
+#if UNITY_EDITOR
+
+				if (clicked)
+					return;
+				
+				if(Input.GetMouseButtonDown(0))
+				{
+					ClickenOn(Input.mousePosition);
+				}		
+#endif
 	}
 	void ClickenOn(Vector3 pos)
 	{
 		if (Input.touches.Length>0 &&  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
 			return;
-		//		else if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
-		//			return;
-
+#if UNITY_EDITOR
+			else if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
+				return;
+#endif
 		Vector3 mousePos = pos;
 		mousePos.z = 10;
 
@@ -63,7 +66,9 @@ public class InputManager : MonoBehaviour {
 			}
 		}
 		else if(Input.mousePosition != null) {
-			//mousePos = Input.mousePosition;
+#if UNITY_EDITOR
+			mousePos = Input.mousePosition;
+#endif
 		}
 
 
@@ -108,9 +113,14 @@ public class InputManager : MonoBehaviour {
 			Events.OnClick(pos, hit.transform.gameObject.name);
 		} else
 		{
-			//            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
-			//                return;
-			//Events.OnClickOutside(isLeft);
+			if (Input.touches.Length>0 &&  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+				return;
+#if UNITY_EDITOR
+            if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
+                return;
+#endif
+			Events.OnClickOutside(isLeft);
+
 		}
 
 	}

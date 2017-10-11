@@ -76,13 +76,19 @@ public class GlobosManager : MonoBehaviour {
         if (side == sides.RIGHT)
             globoPopup2.gameObject.SetActive(false);
     }
+	float maxPos = 890;
 	void OnGloboSimpleTimeOut(string title, Vector2 pos, string text, int timeOut)
 	{
+		StartCoroutine (ResetThisGlobo (title, timeOut));
+
+		if (pos.x > maxPos || pos.x < -maxPos)		
+			return;
+		
 		GloboInfo newGloboSimple = Instantiate(globoSimple);
 		newGloboSimple.transform.SetParent(this.transform);
 		newGloboSimple.transform.localPosition = pos;
 		newGloboSimple.Init(title, text);
-		StartCoroutine (ResetThisGlobo (title, timeOut));
+
 	}
 	IEnumerator ResetThisGlobo(string title, int timeOut)
 	{

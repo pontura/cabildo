@@ -28,7 +28,7 @@ public class GloboInfo : MonoBehaviour
     {
 		this.title = _title;
         field.text = text;
-		int _h = (text.Length / 20);
+		int _h = (text.Length / 25);
 		float _height = 50 + (lineHeignt*_h);
 		globo.GetComponent<RectTransform> ().sizeDelta = new Vector2 (globo.GetComponent<RectTransform> ().sizeDelta.x, _height);
     }
