@@ -1,43 +1,43 @@
-[
+﻿[
 	{
 		id: "casaCheta",
 		title: "Casa Pudiente",
-		text: "Hasta mitad del siglo XVII las casas urbanas solían ser pequeñas, con mala iluminación, paredes de ladrillo o adobe, ventanas sin vidrio y grandes patios. Luego, el desarrollo económico de la ciudad se expresó en grandes construcciones tanto privadas como públicas. Las casas empezaron a contar con varios patios y grandes salones, las más chicas estaban construidas alrededor de un solo patio, y las mínimas, de un único cuarto de alquiler."
+		text: "Hasta mitad del S XVII las casas urbanas eran pequeñas, mal iluminadas, paredes de ladrillo o adobe, ventanas sin vidrio y patios. Luego, el desarrollo devino en grandes edificios privados y públicos. Podían tener uno o varios patios y grandes salones, y algunos tenían un cuarto de alquiler."
 	},
 	{
 		id: "iglesia",
 		title: "Iglesia",
-		text: "Las iglesias pertenecían a distintas órdenes religiosas, como la de los dominicos o la de los jesuitas. La iglesia principal de la ciudad era la Catedral. A la misa del alba concurrían los pobres en cambio asistían al mediodía quienes contaban con una mejor posición económica. Como las iglesias no tenían bancos, los esclavos llevaban almohadones para que las mujeres y niñas estuviesen cómodas al momento de arrodillarse durante la ceremonia. Tanto ricos como pobres vestían sus mejores ropas para celebrar la misa."
+		text: "Las había de distintas órdenes religiosas. La principal era la Catedral. A la misa del alba iban los pobres y al mediodía quienes contaban con una mejor posición económica, y todos lo hacían con sus mejores ropas. Los esclavos llevaban almohadones para que las mujeres pudiesen arrodillarse."
 	},
 	{
 		id: "campo",
 		title: "El Campo",
-		text: "En los alrededores de la Ciudad de Buenos Aires vivían labradores que se dedicaban a cultivar hortalizas y cereales como así también a criar animales con los que abastecían a la ciudad. Trabajaban todos los miembros de la familia y a veces también personas que se sumaban a trabajar a cambio de techo y comida. Había pocos trabajadores permanentes y solían ser esclavos. "
+		text: "En los alrededores de la Ciudad vivían labradores que se dedicaban a cultivar hortalizas y cereales como así también a criar animales . Trabajaba toda la familia y a veces también personas que ayudaban a cambio de techo y comida. Había pocos trabajadores permanentes y solían ser esclavos. "
 	},
 	{
 		id: "rancho",
 		title: "Rancho",
-		text: "La mayor parte de la población vivía en ranchos. Estas viviendas contaban con una sola planta, techos de paja sostenidos con palmas o atados con cañas y paredes de tierra arcillosa, paja y estiércol. Por lo tanto eran muy inestables y constantemente debían reconstruirse. Solían organizarse en torno a un pasillo lateral al que daban las habitaciones. Muchas veces, la habitación que daba a la calle era usada como negocio. Los productos se colgaban de la ventana o se exhibían en la calle, con el riesgo  de que pasara alguien a caballo y los robara al galope."
+		text: "La mayor parte de la población vivía en ranchos de una sola planta con techos de paja y paredes de tierra arcillosa, paja y estiércol. Se organizaban en torno a un pasillo lateral. El perímertro del rancho estaba protegido por un cerco de tunas"
 	},
 	{
 		id: "pulperia",
 		title: "Pulperia",
-		text: "La pulpería era un negocio donde se vendía todo tipo de productos para el consumo diario. Funcionaban a la vez como almacenes y como taberna, y eran lugares de ocio para los varones plebeyos. Eran locales sencillos. La mayoría de los pulperos provenían de España. Si bien las pulperías suelen considerarse como espacios exclusivamente masculinos, las mujeres pertenecientes a los sectores populares concurrían pero durante la mañana o en las primeras horas de la noche. Avanzada la noche, las pulperías se convertían en un espacio masculino en el que los parroquianos bebían, jugaban a las cartas, a los bolos y tocaban la guitarra."
+		text: "La pulpería era un negocio donde se vendía todo tipo de productos. Era una mezcla de almacen y taberna. La mayoría de los pulperos eran españoles. Las mujeres sólo concurrían durante la mañana o en las primeras horas de la noche. Avanzada la noche sólo iban hombres."
 	},
 	{
 		id: "cocina",
 		title: "Cocina",
-		text: "En la cocina el fogón estaba encendido todo el día, con agua lista para el mate y también para cocinar. El humo ennegrecía las paredes y salía por un agujero en el techo. En muchas casas no había horario fijo para comer y no era frecuente reunirse para hacerlo. La vajilla y los cubiertos escaseaban: solo había cuchillos y algún tenedor o cuchara. Los utensilios también eran pocos: ollas de hierro, una pava, alguna sartén y un cucharón o un palo para revolver."
+		text: "El fogón estaba encendido todo el día, con agua lista para el mate o para cocinar. El humo ennegrecía las paredes y salía por un agujero en el techo. Las comidas no eran reuniones sociales ni se hacían con horarios fijos. La vajilla y los utensilios escaseaban. Se utilizaban pocos elementos."
 	},	
 	{
 		id: "cuarto",
 		title: "Cuarto",
-		text: "Solían tener una cama de madera aunque el respaldo también podía ser de bronce. Los colchones eran de plumas o lana. Las sábanas estaban decoradas con encaje y puntilla. Se usaban frazadas de lana o ponchos como abrigo. En el cuarto también podías encontrar un baúl, un ropero, un banco y un tocador con espejo."
+		text: "Solían tener una cama de madera aunque el respaldo también podía ser de bronce. Los colchones eran de plumas o lana. Las sábanas estaban decoradas con encaje y puntilla. Se usaban frazadas de lana o ponchos como abrigo."
 	},	
 	{
 		id: "banio",
 		title: "Baño",
-		text: "Las viviendas tradicionales porteñas tenían, hasta el siglo XIX, una letrina, es decir un cuarto de madera o mampostería ubicado en el patio posterior con un agujero en el piso hecho sobre tablas, algunos ladrillos o simplemente tierra con cal. Debido a su olor pestilente y la falta de higiene común en la época, consecuencia de la escasez de agua, las casas tuvieron un bucloir, un tocador y sólo más tarde un cuarto de baño."
+		text: "Para la época los inodoros eran muy diferentes a los que conocemos hoy. Se usaba una letrina, esto era un cuarto de madera ubicado en el patio posterior y tenía un agujero en el piso hecho sobre tablas."
 	},	
 	{
 		id: "banio-hombre",
@@ -45,7 +45,7 @@
 	},
 	{
 		id: "banio-mujer",
-		text: "¡Ahhh! El agua que calentó Juana en el fogón está como me gusta. Pronto cambiaremos esta bañera de madera por una mejor de latón"
+		text: "¡Ahhh! El agua que calentó Juana en el fogón está como me gusta."
 	},	
 	{
 		id: "traje-1-hombre",
@@ -110,6 +110,10 @@
 		text: "¿A quién querés que atienda?"
 	},
 	{
+		id: "indio",
+		text: "Vine a la ciudad a vender plumas y a comprar añil, tabaco, yerba y aguardiente"
+	},
+	{
 		id: "cantina-esclavo",
 		text: "Ah, no, no. Está prohibido vender bebidas a esclavos. Pero bueno, dale"
 	},
@@ -124,12 +128,12 @@
 	},
 	{
 		id: "bochas",
-		title: "Bolos",
-		text: "La pulpería era un negocio donde se vendía todo tipo de productos para el consumo diario. Funcionaban a la vez como almacenes y como taberna, y eran lugares de ocio para los varones plebeyos. Eran locales sencillos. La mayoría de los pulperos provenían de España. Si bien las pulperías suelen considerarse como espacios exclusivamente masculinos, las mujeres pertenecientes a los sectores populares concurrían pero durante la mañana o en las primeras horas de la noche. Avanzada la noche, las pulperías se convertían en un espacio masculino en el que los parroquianos bebían, jugaban a las cartas, a los bolos y tocaban la guitarra."
+		title: "Bochas",
+		text: "El origen de este juego es indígena. Se practicaba en una cancha cuyos límites estaban marcados por gruesos troncos de madera."
 	},
 	{
 		id: "perinola",
 		title: "Perinola",
-		text: "La pulpería era un negocio donde se vendía todo tipo de productos para el consumo diario. Funcionaban a la vez como almacenes y como taberna, y eran lugares de ocio para los varones plebeyos. Eran locales sencillos. La mayoría de los pulperos provenían de España. Si bien las pulperías suelen considerarse como espacios exclusivamente masculinos, las mujeres pertenecientes a los sectores populares concurrían pero durante la mañana o en las primeras horas de la noche. Avanzada la noche, las pulperías se convertían en un espacio masculino en el que los parroquianos bebían, jugaban a las cartas, a los bolos y tocaban la guitarra."
+		text: "Era un pequeño trompo de cuatro caras marcadas con las letras S (saca), P (pone), D (deja) y T (todo) que indicaban la actitud que debían seguir los apostadores con respecto a lo apostado"
 	}
 ]

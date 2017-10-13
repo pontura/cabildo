@@ -1,4 +1,4 @@
-[
+﻿[
 	{
 		aljibe:
 		{
@@ -32,7 +32,7 @@
 				],
 				[
 					{ persona:"A", frase:"Yo en mi casa tengo una cañas que junté para jugar a las espadas" },
-					{ persona:"B", frase:"Mi muñeca es de porcelana. Se llama Josefa." } 
+					{ persona:"B", frase:"Mi muñeca se llama Josefa." } 
 				],
 				[
 					{ persona:"A", frase:"¿Te gusta jugar a la gallina ciega? ¿Querés jugar luego?" },
@@ -47,33 +47,43 @@
 			bebedores:
 			[
 				[
-					{ persona:"A", frase:"xxxxxx" },
-					{ persona:"B", frase:"ccccccc" }
+					{ persona:"A", frase:"Ja-Ja-Ja" },
+					{ persona:"B", frase:"Je-Je-Je" }
 				],
 				[
-					{ persona:"A", frase:"xxxxxx 2" },
-					{ persona:"B", frase:"ccccccc 2" }
+					{ persona:"A", frase:"Ji-Ji" },
+					{ persona:"B", frase:"Jojojojo" }
 				],
 				[
-					{ persona:"A", frase:"dddddd 2" },
-					{ persona:"B", frase:"uuuuuuuuu 2" }
+					{ persona:"A", frase:"Jaja- Hic!" },
+					{ persona:"B", frase:"Ji-Ji-jiii" }
 				]
-			],
-			
-			guitarrista:
+			]
+		},
+		
+		caminantes:
+		{		
+			personas:		
 			[
-				[
-					{ persona:"A", frase:"eeeeee" },
-					{ persona:"B", frase:"ssssssss" }
-				],
-				[
-					{ persona:"A", frase:"yyyy 2" },
-					{ persona:"B", frase:"iiiiiiiiii 2" }
-				],
-				[
-					{ persona:"A", frase:"gggggg 2" },
-					{ persona:"B", frase:"oooooooooo 2" }
-				]
+				{ persona:"china", frase:"Esta mañana machaqué mucho trigo en el mortero para hacer rico pan" },
+				{ persona:"esclavo", frase:"El amo me ha mandado a hacer las compras" },
+				{ persona:"farolero", frase:"A la noche vendré a prender los faroles" },
+				{ persona:"gaucho", frase:"Más tarde voy a la pulpería a jugar al truquiflor." },
+				{ persona:"HombreRico1", frase:"¡Buen día!" },
+				{ persona:"vendedoraTortas", frase:"¡Vendo tortas bien calientes!" },
+				{ persona:"vendedorEscobas", frase:"¡Escoba, escoba! ¡Escobas y plumeros!" },
+				{ persona:"mujerRica2", frase:"Es estilo Imperio, ¡lo último en moda francesa!" },
+	  			{ persona:"mujerRica1", frase:"Más tarde iré a la tertulia" },
+				{ persona:"lavandera1", frase:"¡Cuánta ropa tienen los amos, y nosotras tan poca!" },
+				{ persona:"lavandera2", frase:"Cuidado al fregar en la piedra esa mantilla, ¡es muy fina!" },
+				{ persona:"nadador1", frase:"A mi me gusta venir acá a cazar ranas" },
+				{ persona:"nadador2", frase:"Cuando las lavanderas se distraigan, ¡mezclémosles la ropa!" },
+				{ persona:"gauchoRancho", frase:"Soy gaucho payador y arriero. Ando con poncho y espuelas. La pampa es mi única escuela. Y juné que aprender mucho no es lo que te hace más ducho, sino el aprender cosas buenas"},
+				{ persona:"chinaZanahorias", frase:"Salió linda la cosecha, ¡haré unos buenos guisos!" },
+				{ persona:"VendedorVelas", frase:"¡Vendo velas, velitas y velones, para adornar los salones!"},
+				{ persona:"HombreRico2", frase:"amén" },
+				{ persona:"HombreRico3", frase:"Gracias hijos por haber venido a misa" }
+				
 			]
 		}
 	}

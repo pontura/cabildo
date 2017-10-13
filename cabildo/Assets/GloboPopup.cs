@@ -3,8 +3,8 @@ using System.Collections;
 
 public class GloboPopup : MonoBehaviour {
     
-	void Start () {
-	
+	void OnEnable () {
+		Events.ConversationKill ("negrito");
 	}
     public void Close()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SFXManager : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class SFXManager : MonoBehaviour {
 	public AudioClip  perinola;
 	public AudioClip  applause;
 	public AudioClip  guitar;
+	public AudioClip  bell;
+	public GameObject container;
 
 	private AudioSource audioSource;
 

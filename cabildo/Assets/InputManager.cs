@@ -43,12 +43,16 @@ public class InputManager : MonoBehaviour {
 	}
 	void ClickenOn(Vector3 pos)
 	{
+		Events.OnSFX (Data.Instance.sFXManager.buttonClick);
+
 		if (Input.touches.Length>0 &&  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
 			return;
 #if UNITY_EDITOR
 			else if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
 				return;
 #endif
+
+
 		Vector3 mousePos = pos;
 		mousePos.z = 10;
 

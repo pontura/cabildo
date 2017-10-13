@@ -10,10 +10,12 @@ public class UIPulperia : MonoBehaviour {
 
     public Transform globo_guitarrista;
     public Transform globo_guitarrista2;
+	public Transform globo_indio;
 
     public GameObject hint_toma;
     public GameObject hint_bebedores;
     public GameObject hint_guitarra;
+	public GameObject hint_indio;
 
     public Animator toma1;
     public Animator toma2;
@@ -28,7 +30,7 @@ public class UIPulperia : MonoBehaviour {
         hint_toma.SetActive(true);
         hint_guitarra.SetActive(true);
         hint_bebedores.SetActive(true);
-
+		hint_indio.SetActive(true);
 
         DiceCantinero(1);
         BebedoresHabla();
@@ -43,6 +45,7 @@ public class UIPulperia : MonoBehaviour {
         Events.ConversationKill("cantina");
         Events.ConversationKill("bebedores");
         Events.ConversationKill("guitarrista");
+		Events.ConversationKill("indio");
     }
     public void Bebedores()
     {
@@ -50,6 +53,19 @@ public class UIPulperia : MonoBehaviour {
         foreach (Animator anim in bebedor)
             anim.Play("drink");
     }
+	public void Indio()
+	{
+		hint_indio.SetActive(false);
+
+		string field =  Data.Instance.texts.GetContent("indio");
+
+		Events.OnGloboSimple("indio", globo_indio.localPosition + transform.localPosition, field);
+		Invoke("ResetGloboIndio", 5);
+	}
+	void ResetGloboIndio()
+	{
+		Events.OnGloboSimpleOff("indio");
+	}
     public void Guitarra()
     {
 		Events.OnSFX(Data.Instance.sFXManager.guitar);

@@ -18,9 +18,13 @@ public class Caminante : MonoBehaviour {
     void Start()
     {
         character = GetComponent<Character>();
-        Loop();
+
         Events.OnClick += OnClick;
 		Events.ConversationKill += ConversationKill;
+
+		if (time_to_cross == 0)
+			return;
+		Loop();
     }
     void OnDestroy()
     {
@@ -54,9 +58,12 @@ public class Caminante : MonoBehaviour {
 	void ConversationKill(string title)
 	{
 		if (title != gameObject.name) return;
+		paused = false;
+		if (time_to_cross == 0)
+			return;
 		iTween.Resume(gameObject);
 		character.Walk();
-		paused = false;
+
 	}
     void Loop()
     {

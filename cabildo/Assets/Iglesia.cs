@@ -31,6 +31,7 @@ public class Iglesia : MonoBehaviour {
     }
     void SetActive()
     {
+		Events.OnSFX (Data.Instance.sFXManager.bell);
         state = states.ACTIVE;
         anim.Play("active");
         Invoke("Idle", 12);

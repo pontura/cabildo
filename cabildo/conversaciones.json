@@ -1,4 +1,4 @@
-[
+﻿[
 	{
 		aljibe:
 		{
@@ -32,7 +32,7 @@
 				],
 				[
 					{ persona:"A", frase:"Yo en mi casa tengo una cañas que junté para jugar a las espadas" },
-					{ persona:"B", frase:"Mi muñeca es de porcelana. Se llama Josefa." } 
+					{ persona:"B", frase:"Mi muñeca se llama Josefa." } 
 				],
 				[
 					{ persona:"A", frase:"¿Te gusta jugar a la gallina ciega? ¿Querés jugar luego?" },
@@ -80,7 +80,9 @@
 				{ persona:"nadador2", frase:"Cuando las lavanderas se distraigan, ¡mezclémosles la ropa!" },
 				{ persona:"gauchoRancho", frase:"Soy gaucho payador y arriero. Ando con poncho y espuelas. La pampa es mi única escuela. Y juné que aprender mucho no es lo que te hace más ducho, sino el aprender cosas buenas"},
 				{ persona:"chinaZanahorias", frase:"Salió linda la cosecha, ¡haré unos buenos guisos!" },
-				{ persona:"VendedorVelas", frase:"¡Vendo velas, velitas y velones, para adornar los salones!"}
+				{ persona:"VendedorVelas", frase:"¡Vendo velas, velitas y velones, para adornar los salones!"},
+				{ persona:"HombreRico2", frase:"amén" },
+				{ persona:"HombreRico3", frase:"Gracias hijos por haber venido a misa" }
 				
 			]
 		}

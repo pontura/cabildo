@@ -1,48 +1,43 @@
-[
+﻿[
 	{
 		id: "casaCheta",
 		title: "Casa Pudiente",
-		text: "Hasta mitad del siglo XVIII las casas urbanas no contaron con una gran arquitectura. Solían ser pequeñas, con mala iluminación, paredes de ladrillo o adobe, ventanas sin vidrio y grandes patios. Ya en el siglo XVIII los cambios económicos iniciados se expresaron en grandes construcciones privadas y públicas; las casas empezaron a contar con varios patios y grandes salones, las más chicas estaban construidas alrededor de un solo patio, y las mínimas, de un único cuarto de alquiler."
+		text: "Hasta mitad del S XVII las casas urbanas eran pequeñas, mal iluminadas, paredes de ladrillo o adobe, ventanas sin vidrio y patios. Luego, el desarrollo devino en grandes edificios privados y públicos. Podían tener uno o varios patios y grandes salones, y algunos tenían un cuarto de alquiler."
 	},
 	{
 		id: "iglesia",
 		title: "Iglesia",
-		text: "Este es el texto para la iglesia"
+		text: "Las había de distintas órdenes religiosas. La principal era la Catedral. A la misa del alba iban los pobres y al mediodía quienes contaban con una mejor posición económica, y todos lo hacían con sus mejores ropas. Los esclavos llevaban almohadones para que las mujeres pudiesen arrodillarse."
 	},
 	{
 		id: "campo",
 		title: "El Campo",
-		text: "El campo bla bla"
+		text: "En los alrededores de la Ciudad vivían labradores que se dedicaban a cultivar hortalizas y cereales como así también a criar animales . Trabajaba toda la familia y a veces también personas que ayudaban a cambio de techo y comida. Había pocos trabajadores permanentes y solían ser esclavos. "
 	},
 	{
 		id: "rancho",
 		title: "Rancho",
-		text: "Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+		text: "La mayor parte de la población vivía en ranchos de una sola planta con techos de paja y paredes de tierra arcillosa, paja y estiércol. Se organizaban en torno a un pasillo lateral. El perímertro del rancho estaba protegido por un cerco de tunas"
 	},
 	{
 		id: "pulperia",
 		title: "Pulperia",
-		text: "Texto sobre el PulperiaPulperia Pulperia Pulperia Pulperia Pulperia Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
-	},
-	{
-		id: "casaSecundaria",
-		title: "Casa Secundaria",
-		text: "Texto sobre Casa Secundaria Casa Secundaria Casa Secundaria Casa Secundaria Casa SecundariaCasa Secundaria sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho Texto sobre el rancho"
+		text: "La pulpería era un negocio donde se vendía todo tipo de productos. Era una mezcla de almacen y taberna. La mayoría de los pulperos eran españoles. Las mujeres sólo concurrían durante la mañana o en las primeras horas de la noche. Avanzada la noche sólo iban hombres."
 	},
 	{
 		id: "cocina",
 		title: "Cocina",
-		text: "Algún texto sobre la cocina"
+		text: "El fogón estaba encendido todo el día, con agua lista para el mate o para cocinar. El humo ennegrecía las paredes y salía por un agujero en el techo. Las comidas no eran reuniones sociales ni se hacían con horarios fijos. La vajilla y los utensilios escaseaban. Se utilizaban pocos elementos."
 	},	
 	{
 		id: "cuarto",
-		title: "cuarto",
-		text: "Algún texto sobre el cuarto acá..."
+		title: "Cuarto",
+		text: "Solían tener una cama de madera aunque el respaldo también podía ser de bronce. Los colchones eran de plumas o lana. Las sábanas estaban decoradas con encaje y puntilla. Se usaban frazadas de lana o ponchos como abrigo."
 	},	
 	{
 		id: "banio",
 		title: "Baño",
-		text: "Algún texto sobre el baño..."
+		text: "Para la época los inodoros eran muy diferentes a los que conocemos hoy. Se usaba una letrina, esto era un cuarto de madera ubicado en el patio posterior y tenía un agujero en el piso hecho sobre tablas."
 	},	
 	{
 		id: "banio-hombre",
@@ -50,7 +45,7 @@
 	},
 	{
 		id: "banio-mujer",
-		text: "¡Ahhh! El agua que calentó Juana en el fogón está como me gusta. Pronto cambiaremos esta bañera de madera por una mejor de latón"
+		text: "¡Ahhh! El agua que calentó Juana en el fogón está como me gusta."
 	},	
 	{
 		id: "traje-1-hombre",
@@ -115,83 +110,30 @@
 		text: "¿A quién querés que atienda?"
 	},
 	{
+		id: "indio",
+		text: "Vine a la ciudad a vender plumas y a comprar añil, tabaco, yerba y aguardiente"
+	},
+	{
 		id: "cantina-esclavo",
 		text: "Ah, no, no. Está prohibido vender bebidas a esclavos. Pero bueno, dale"
-	},
-	{
-		id:"ranchoZanahorias",
-		text: "rancho donde van las zanahorias"
-	},
-	{
-		id:"rancho",
-		text: "rancho del medio"
 	},
 	{
 		id: "cantina-amigo",
 		text: "Ahí va una ginebra para el amigo"
 	},
 	{
-		id: "mujerRica1",
-		text: "mujerRica1"	
+		id: "aljibe",
+		title: "Patio con aljibe",
+		text: "Se echaban carbones al agua para purificarla y tortugas para saber si estaba buena. Además, se comían los bichitos"	
 	},
 	{
-		id: "mujerRica2",
-		text: "mujerRica2"	
+		id: "bochas",
+		title: "Bochas",
+		text: "El origen de este juego es indígena. Se practicaba en una cancha cuyos límites estaban marcados por gruesos troncos de madera."
 	},
 	{
-		id: "china",
-		text: "china"	
-	},
-	{
-		id: "esclavo",
-		text: "esclavo"	
-	},
-	{
-		id: "farolero",
-		text: "farolero"	
-	},
-	{
-		id: "gaucho",
-		text: "gaucho"	
-	},
-	{
-		id: "HombreRico1",
-		text: "HombreRico1"	
-	},
-	{
-		id: "vendedoraTortas",
-		text: "vendedoraTortas"	
-	},
-	{
-		id: "vendedorEscobas",
-		text: "vendedorEscobas"	
-	},
-	{
-		id: "gauchoRancho",
-		text: "soy el gaucho que toma mate en el rancho"	
-	},
-	{
-		id: "chinaZanahorias",
-		text: "chinaZanahorias"	
-	},
-	{
-		id: "lavandera1",
-		text: "lavandera1"	
-	},
-	{
-		id: "lavandera2",
-		text: "lavandera2"	
-	},
-	{
-		id: "nadador1",
-		text: "nadador1"	
-	},
-	{
-		id: "nadador2",
-		text: "nadador2"	
-	},
-	{
-		id: "tortugas",
-		text: "Se echan carbones al agua para purificarla y tortugas para saber si está buena. Además, se comen los bichitos"	
+		id: "perinola",
+		title: "Perinola",
+		text: "Era un pequeño trompo de cuatro caras marcadas con las letras S (saca), P (pone), D (deja) y T (todo) que indicaban la actitud que debían seguir los apostadores con respecto a lo apostado"
 	}
 ]
