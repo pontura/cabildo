@@ -13,6 +13,8 @@ public class InputManager : MonoBehaviour {
 	float lastClickRight;
 	float clicksDelayRight =  0.3f;
 
+
+
 	void Update()
 	{
 		if (Input.GetKeyDown (KeyCode.Q))
@@ -123,7 +125,7 @@ public class InputManager : MonoBehaviour {
             if (UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
                 return;
 #endif
-			Events.OnClickOutside(isLeft);
+			//Events.OnClickOutside(isLeft);
 
 		}
 

@@ -15,7 +15,7 @@ public class Popup2Manager : MonoBehaviour {
     }
     void OnDestroy()
     {
-        Events.OnGlobo2Popup += OnGlobo2Popup;
+        Events.OnGlobo2Popup -= OnGlobo2Popup;
     }
     void OnGlobo2Popup(string id)
     {

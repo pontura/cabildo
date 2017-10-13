@@ -175,12 +175,12 @@ public class GlobosManager : MonoBehaviour {
 		//field.text += "pos: " + pos;
         if(pos.x>0)
         {
-            ResetGlobos2();
+           // ResetGlobos2();
             CheckForHeaderText2(id);
         }
         else
         {
-            ResetGlobos();
+           // ResetGlobos();
             CheckForHeaderText(id);
         }
        
